@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MW Hair Salon | Margaret Dolubizno, Park Ridge, IL</title>
+<meta name="description" content="A private, one-woman hair studio in Park Ridge, IL. Margaret Dolubizno brings almost three decades of experience, holistic scalp health, and organic color to every appointment.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=BenchNine:wght@300;400;700&family=Archivo+Black&family=Barlow+Semi+Condensed:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!--
+  This page is fully self-contained (CSS and JS inlined below) so it renders
+  correctly with a single double-click, in any file preview, or on a server.
+-->
+<style>
+
+/* ---------------------------------------------------------------
+   MW Hair Salon design system
+   Everline-style editorial redesign. Palette 5 "Green & Plum":
+   greens sampled from the printed business card; plum from the
+   card lettering. Statement blocks: Olive #556E22 (hero, footer).
+----------------------------------------------------------------*/
+:root {
+  --white:      #FFFFFF;
+  --cream:      #FCFBF7;
+  --green-50:   #F1F4E1;
+  --green-100:  #DFE6C0;
+  --green-300:  #98B141;
+  --green-500:  #6E8A2E;
+  --green-700:  #556E22;
+  --green-900:  #2B331A;
+  --plum:       #5E4E80;
+  --ink:        #191D10;
+  --ink-soft:   #454B36;
+  --hairline:   rgba(25, 29, 16, 0.16);
+
+  --font-display: 'BenchNine', 'Arial Narrow', sans-serif;
+  --font-heavy: 'Archivo Black', 'Arial Black', sans-serif;
+  --font-body: 'Barlow Semi Condensed', 'Arial Narrow', sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.75rem;
+  --space-5: 4.5rem;
+  --space-6: 7rem;
+
+  --radius: 0px;
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+img, svg { max-width: 100%; display: block; }
+ul { list-style: none; padding: 0; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+table { border-collapse: collapse; }
+
+body {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--cream);
+  min-height: 100dvh;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--ink);
+  text-transform: uppercase;
+  line-height: 0.92;
+  letter-spacing: 0.005em;
+}
+h2 { font-size: clamp(2.8rem, 7vw, 5.2rem); }
+h3 { font-size: clamp(1.5rem, 2.6vw, 2rem); }
+p { color: var(--ink-soft); }
+
+.wrap { width: 100%; max-width: 1220px; margin-inline: auto; padding-inline: var(--space-3); }
+
+:focus-visible { outline: 2px solid var(--plum); outline-offset: 3px; }
+
+.skip-link {
+  position: absolute; left: -999px; top: 0; background: var(--green-900); color: var(--cream);
+  padding: 0.75rem 1.25rem; z-index: 200;
+}
+.skip-link:focus { left: 0; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden;
+  clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+}
+
+.eyebrow {
+  font-family: var(--font-heavy); font-weight: 400; letter-spacing: 0.16em; text-transform: uppercase;
+  font-size: 0.7rem; color: var(--plum); margin-bottom: var(--space-2);
+}
+
+.section-lede {
+  max-width: 52ch; margin-top: var(--space-2);
+  text-transform: uppercase; letter-spacing: 0.01em; font-size: 0.95rem; line-height: 1.6;
+}
+
+/* ---------- buttons: square, heavy, editorial ---------- */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 0.55rem;
+  font-family: var(--font-heavy); font-weight: 400; font-size: 0.78rem;
+  text-transform: uppercase; letter-spacing: 0.06em;
+  padding: 1rem 1.7rem; border-radius: 0;
+  transition: background-color 180ms var(--ease), color 180ms var(--ease), transform 150ms var(--ease);
+  cursor: pointer; white-space: nowrap;
+}
+.btn-primary { background: var(--green-900); color: var(--cream); }
+.btn-primary:hover { background: var(--ink); transform: translateY(-2px); }
+.btn-ghost { background: transparent; color: var(--ink); border: 1px solid var(--ink); }
+.btn-ghost:hover { background: var(--ink); color: var(--cream); }
+.btn-lg { padding: 1.15rem 2.1rem; font-size: 0.85rem; }
+.btn:active { transform: translateY(1px); }
+
+/* ---------- header ---------- */
+.site-header {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--cream);
+  border-bottom: 1px solid var(--hairline);
+}
+.header-inner { display: flex; align-items: center; justify-content: space-between; padding-block: 0.7rem; gap: var(--space-2); }
+.brand-mark { height: 44px; width: auto; color: var(--ink); }
+.main-nav ul { display: flex; gap: var(--space-3); }
+.main-nav a {
+  font-family: var(--font-heavy); font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--ink); padding-block: 0.3rem;
+}
+.main-nav a:hover { color: var(--plum); }
+.header-actions { display: flex; align-items: center; gap: var(--space-2); }
+.header-actions .btn { padding: 0.75rem 1.2rem; font-size: 0.68rem; }
+.nav-toggle { display: none; flex-direction: column; align-items: center; justify-content: center; gap: 4px; width: 44px; height: 44px; padding: 0; }
+.nav-toggle span { width: 22px; height: 2px; background: var(--ink); transition: transform 200ms var(--ease), opacity 200ms var(--ease); }
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
+/* ---------- hero: olive statement block, typewriter headline ---------- */
+.hero { background: var(--green-700); color: var(--cream); padding-block: var(--space-5) var(--space-6); }
+.hero .eyebrow { color: var(--green-100); }
+.hero-grid { display: grid; gap: var(--space-4); align-items: center; min-height: min(78vh, 840px); }
+.hero h1 {
+  color: var(--cream);
+  font-size: clamp(3.2rem, 10.5vw, 8.6rem);
+  margin-block: var(--space-2) var(--space-3);
+  max-width: 10ch;
+}
+/* ghost reserves the full headline's box so nothing shifts as text types/erases */
+.typed-h1 { position: relative; }
+.typed-ghost { visibility: hidden; }
+.typed-live { position: absolute; inset: 0; }
+/* locked wrap lines: each row is fixed so words never jump while typing */
+.typed-h1 .tline { display: block; white-space: nowrap; }
+.typed-cursor { color: var(--green-100); animation: cursorBlink 1.05s steps(2, start) infinite; }
+@keyframes cursorBlink { to { opacity: 0; } }
+.hero-lede {
+  color: var(--green-50); max-width: 54ch;
+  text-transform: uppercase; letter-spacing: 0.01em; font-size: 0.98rem; line-height: 1.65;
+}
+.hero-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.hero-callnote { margin-top: var(--space-2); color: var(--green-100); font-family: var(--font-heavy); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; }
+.hero .btn-primary { background: var(--green-900); color: var(--cream); }
+.hero .btn-primary:hover { background: var(--ink); }
+.hero-media { position: relative; }
+.hero-portrait {
+  width: 100%; height: auto; aspect-ratio: 3/4; object-fit: cover; object-position: top center;
+  border-radius: 0;
+}
+.hero-media-note {
+  background: var(--cream); border: 1px solid var(--green-900);
+  padding: var(--space-2) var(--space-3); max-width: 300px; margin-top: -3.2rem; margin-left: var(--space-3); position: relative;
+}
+.hero-media-note p { color: var(--ink); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.6; }
+.hero-media-note span { display: block; margin-top: 0.5rem; font-family: var(--font-heavy); font-size: 0.62rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--plum); }
+
+/* ---------- marquee ribbons ---------- */
+.marquee {
+  overflow: hidden; border-block: 1px solid var(--hairline);
+  padding-block: 0.55rem; background: var(--cream); white-space: nowrap;
+}
+.marquee-track { display: inline-flex; width: max-content; animation: marqueeScroll 26s linear infinite; }
+.marquee-group { display: inline-flex; align-items: baseline; }
+.marquee-group span {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: clamp(1.9rem, 4.2vw, 3rem); line-height: 1; color: var(--ink);
+  padding-right: 1.6rem;
+}
+.marquee-group span.dot { color: var(--green-300); }
+@keyframes marqueeScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+
+/* ---------- about ---------- */
+.about { padding-block: var(--space-6); }
+.about-grid { display: grid; gap: var(--space-4); align-items: center; }
+.about-media { position: relative; padding-bottom: 3.4rem; }
+.about-photo { width: 100%; height: auto; aspect-ratio: 4/5; object-fit: cover; border-radius: 0; }
+.about-photo-accent {
+  position: absolute; width: 56%; right: 0; bottom: 0; aspect-ratio: 4/5;
+  border: 8px solid var(--cream);
+}
+.about-copy h2 { margin-bottom: var(--space-3); }
+.about-copy p { text-transform: uppercase; letter-spacing: 0.01em; font-size: 0.92rem; line-height: 1.7; }
+.about-copy p + p { margin-top: var(--space-2); }
+.about-facts { margin-top: var(--space-3); display: grid; }
+.about-facts li {
+  padding: 0.7rem 0 0.7rem 1.5rem; position: relative; color: var(--ink);
+  text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.85rem;
+  border-bottom: 1px solid var(--hairline);
+}
+.about-facts li:first-child { border-top: 1px solid var(--hairline); }
+.about-facts li::before { content: ""; position: absolute; left: 0; top: 1.15rem; width: 9px; height: 9px; background: var(--plum); }
+
+/* ---------- services ---------- */
+.services { padding-block: var(--space-6); }
+.services-grid { display: grid; gap: var(--space-4); margin-top: var(--space-4); }
+.service-group { border-top: 3px solid var(--ink); padding-top: var(--space-2); background: transparent; }
+.service-group h3 { color: var(--ink); margin-bottom: 0.9rem; }
+.service-group-note { font-size: 0.72rem; margin-bottom: 0.9rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--plum); font-family: var(--font-heavy); }
+.service-group ul { display: grid; }
+.service-group li {
+  padding-block: 0.55rem; border-bottom: 1px solid var(--hairline); color: var(--ink);
+  text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.85rem;
+}
+.service-group li:last-child { border-bottom: none; }
+
+/* ---------- gallery (interactive bento, carried over) ---------- */
+.gallery { padding-block: var(--space-6); }
+.gallery-head { margin-bottom: var(--space-4); }
+.gallery-cta { text-align: center; margin-top: var(--space-4); }
+.btn-instagram { gap: 0.6rem; white-space: normal; max-width: 100%; }
+.btn-instagram svg { flex-shrink: 0; }
+
+.bento-grid { columns: 2; column-gap: var(--space-2); }
+.bento-tile {
+  position: relative; overflow: hidden; border-radius: 0; padding: 0; border: none;
+  cursor: move; background: var(--green-50);
+  display: block; width: 100%; aspect-ratio: var(--ar, 4 / 5);
+  margin: 0 0 var(--space-2); break-inside: avoid;
+  touch-action: pan-y; -webkit-tap-highlight-color: transparent;
+  transition: box-shadow 220ms var(--ease);
+}
+.bento-tile img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  object-position: var(--pos, 50% 50%);
+  display: block; pointer-events: none; transition: transform 300ms var(--ease);
+}
+.bento-tile::after {
+  content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(to top, rgba(25,29,16,0.55), rgba(25,29,16,0.10) 45%, transparent 65%);
+  opacity: 0; transition: opacity 220ms var(--ease);
+}
+.bento-tile:hover::after, .bento-tile:focus-visible::after { opacity: 1; }
+.bento-tile:hover img { transform: scale(1.045); }
+.bento-tile:hover { box-shadow: 0 0 0 3px var(--green-700); }
+.bento-tile.is-dragging { z-index: 20; cursor: grabbing; box-shadow: 0 24px 52px rgba(25,29,16,0.35); }
+.bento-tile.is-dragging img { transform: none; }
+.bento-tile.is-dragging::after { opacity: 0; }
+.bento-tile.snap-back { transition: transform 550ms cubic-bezier(0.34, 1.56, 0.64, 1); }
+.bento-tile:focus-visible { outline: 2px solid var(--plum); outline-offset: 2px; }
+.bento-tile.reveal-tile { opacity: 0; translate: 0 30px; scale: 0.94; }
+.bento-tile.reveal-tile.in { opacity: 1; translate: 0 0; scale: 1; transition: opacity 500ms var(--ease), translate 500ms var(--ease), scale 500ms var(--ease); }
+@media (min-width: 700px) {
+  .bento-grid { columns: 3; }
+}
+
+.bento-modal { position: fixed; inset: 0; z-index: 200; display: flex; align-items: center; justify-content: center; padding: clamp(12px, 3vw, 32px); }
+.bento-modal[hidden] { display: none; }
+.bento-modal-backdrop { position: absolute; inset: 0; background: rgba(25,29,16,0.6); backdrop-filter: blur(6px); }
+.bento-modal-panel { position: relative; z-index: 1; width: 100%; max-width: 1120px; }
+.bento-stage { position: relative; margin: 0; border-radius: 0; overflow: hidden; background: rgba(25,29,16,0.5); height: min(84vh, 820px); display: flex; align-items: center; justify-content: center; }
+.bento-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 46px; height: 46px; border-radius: 0; background: var(--cream); color: var(--ink); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 150ms var(--ease), transform 150ms var(--ease); }
+.bento-nav:hover { background: var(--green-100); transform: translateY(-50%) scale(1.06); }
+.bento-nav-prev { left: 10px; }
+.bento-nav-next { right: 10px; }
+.bento-stage-media { width: 100%; height: 100%; object-fit: contain; display: block; opacity: 1; }
+@keyframes bentoFadeIn { from { opacity: 0.35; } to { opacity: 1; } }
+.bento-stage-media.fade-in { animation: bentoFadeIn 220ms var(--ease); }
+.bento-modal-close { position: absolute; top: 10px; right: 10px; z-index: 3; width: 42px; height: 42px; border-radius: 0; background: var(--cream); color: var(--ink); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: background 150ms var(--ease), transform 150ms var(--ease); }
+.bento-modal-close:hover { background: var(--green-100); transform: scale(1.06); }
+
+.bento-dock { position: fixed; left: 50%; bottom: 18px; transform: translateX(-50%); z-index: 2; display: flex; gap: 3px; padding: 8px 10px; border-radius: 0; background: rgba(85,110,34,0.30); backdrop-filter: blur(14px); border: 1px solid rgba(152,177,65,0.45); cursor: grab; touch-action: none; }
+.bento-dock.is-grabbing { cursor: grabbing; }
+.bento-dock-thumb { width: 44px; height: 44px; border-radius: 0; overflow: hidden; border: 2px solid transparent; cursor: pointer; flex: 0 0 auto; padding: 0; background: none; transition: transform 200ms var(--ease), border-color 200ms var(--ease); }
+.bento-dock-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; pointer-events: none; }
+.bento-dock-thumb:hover { transform: translateY(-6px) scale(1.12); }
+.bento-dock-thumb.active { border-color: var(--cream); transform: translateY(-8px) scale(1.18); }
+
+/* ---------- reviews: light editorial cards ---------- */
+.reviews { padding-block: var(--space-6); }
+.reviews .eyebrow { color: var(--plum); }
+.reviews h2 { color: var(--ink); margin-bottom: var(--space-2); }
+.reviews-sub { color: var(--ink-soft); max-width: 56ch; margin-bottom: var(--space-3); text-transform: uppercase; letter-spacing: 0.01em; font-size: 0.9rem; line-height: 1.65; }
+.reviews-actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-bottom: var(--space-4); }
+.btn-yelp { background: #d32323; color: var(--white); }
+.btn-yelp:hover { background: #a81b1b; }
+.btn-yelp svg { flex-shrink: 0; }
+.btn-google { background: var(--white); color: var(--ink); border: 1px solid var(--ink); }
+.btn-google:hover { background: var(--green-50); }
+.btn-google svg { flex-shrink: 0; }
+.reviews-grid { display: grid; gap: var(--space-3); }
+.review { background: var(--white); border: 1px solid var(--hairline); border-radius: 0; padding: var(--space-3); }
+.review-head { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.6rem; }
+.review-avatar {
+  width: 42px; height: 42px; border-radius: 0; background: var(--green-100); color: var(--green-900);
+  display: flex; align-items: center; justify-content: center; font-family: var(--font-heavy); font-size: 0.8rem;
+  flex-shrink: 0;
+}
+.review-who { min-width: 0; }
+.review-who strong { display: block; font-family: var(--font-heavy); font-weight: 400; color: var(--ink); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.04em; }
+.review-who span { display: block; font-size: 0.78rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.02em; }
+.review-stars { display: flex; gap: 2px; margin-bottom: 0.6rem; }
+.review-stars svg { width: 15px; height: 15px; fill: #d32323; }
+.review-source { margin-left: auto; font-family: var(--font-heavy); font-size: 0.62rem; letter-spacing: 0.06em; color: #d32323; white-space: nowrap; align-self: flex-start; }
+.review-source:hover { text-decoration: underline; }
+.review p { color: var(--ink); font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.01em; line-height: 1.65; }
+.review-date { display: block; margin-top: var(--space-2); font-size: 0.72rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* ---------- location ---------- */
+.location { padding-block: var(--space-6); }
+.location-grid { display: grid; gap: var(--space-4); align-items: center; }
+.hours-table { width: 100%; margin-block: var(--space-3); }
+.hours-table tr { border-bottom: 1px solid var(--hairline); }
+.hours-table tr:first-child { border-top: 1px solid var(--hairline); }
+.hours-table th, .hours-table td { text-align: left; padding-block: 0.7rem; font-weight: 400; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.85rem; }
+.hours-table th { color: var(--ink); font-weight: 600; }
+.hours-table td { color: var(--ink-soft); text-align: right; }
+address { font-style: normal; color: var(--ink-soft); margin-bottom: var(--space-3); line-height: 1.7; text-transform: uppercase; letter-spacing: 0.02em; font-size: 0.9rem; }
+.map-embed { width: 100%; min-height: 380px; height: 100%; border: 1px solid var(--hairline); border-radius: 0; }
+
+/* ---------- contact ---------- */
+.contact { padding-block: var(--space-6); }
+.contact-inner { display: grid; gap: var(--space-4); }
+.contact-list { display: grid; }
+.contact-list li { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--hairline); padding-block: var(--space-2); gap: var(--space-2); }
+.contact-list li:first-child { border-top: 1px solid var(--hairline); }
+.contact-label { font-family: var(--font-heavy); font-size: 0.62rem; color: var(--plum); text-transform: uppercase; letter-spacing: 0.14em; }
+.contact-list a, .contact-list .contact-value { font-size: 0.95rem; font-weight: 600; color: var(--ink); text-transform: uppercase; letter-spacing: 0.02em; }
+.contact-list a:hover { color: var(--plum); }
+.contact-list .contact-value { text-align: right; }
+
+/* ---------- footer: olive statement block ---------- */
+.site-footer { background: var(--green-700); color: var(--green-50); padding-block: var(--space-5); }
+.footer-mark { height: 40px; width: auto; color: var(--cream); margin-bottom: var(--space-3); }
+.footer-inner nav { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); margin-block: var(--space-3); }
+.footer-inner nav a { font-family: var(--font-heavy); font-size: 0.62rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green-50); }
+.footer-inner nav a:hover { color: var(--cream); }
+.footer-fine { font-size: 0.72rem; color: var(--green-100); text-transform: uppercase; letter-spacing: 0.04em; }
+.footer-fine + .footer-fine { margin-top: 0.4rem; }
+
+.reveal { opacity: 0; transform: translateY(16px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); }
+.reveal-in { opacity: 1; transform: translateY(0); }
+
+/* ---------- responsive ---------- */
+@media (min-width: 768px) {
+  .hero-grid { grid-template-columns: 1.08fr 0.92fr; }
+  .about-grid { grid-template-columns: 0.95fr 1.05fr; }
+  .location-grid { grid-template-columns: 1fr 1fr; }
+  .services-grid { grid-template-columns: repeat(3, 1fr); }
+  .contact-inner { grid-template-columns: 1fr 1fr; }
+  .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .wrap { padding-inline: var(--space-4); }
+  .hero-grid { gap: var(--space-6); }
+  .reviews-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (max-width: 767px) {
+  .main-nav {
+    position: fixed; inset: 64px 0 auto 0; background: var(--cream); border-bottom: 1px solid var(--hairline);
+    padding: var(--space-3); transform: translateY(-8px); opacity: 0; pointer-events: none;
+    transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+  }
+  .main-nav.is-open { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .main-nav ul { flex-direction: column; gap: var(--space-2); }
+  .header-actions .btn-primary { min-height: 44px; }
+  .nav-toggle { display: flex; }
+  .hero-media-note { margin-left: 0; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="MW Hair Salon home">
+      <svg class="brand-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768.8 542.2" role="img" aria-label="MW Hair Salon"><path d="M 129.50 449.00 L 128.75 451.50 L 126.50 453.25 L 125.50 456.25 L 123.25 459.25 L 121.25 463.00 L 121.00 467.00 L 118.75 469.00 L 119.25 474.75 L 118.75 476.25 L 117.00 478.00 L 117.25 481.75 L 116.25 484.25 L 116.75 485.50 L 118.25 487.00 L 118.50 487.75 L 118.25 495.00 L 118.75 496.50 L 119.00 500.25 L 118.75 501.25 L 117.25 502.50 L 117.50 503.50 L 119.25 504.00 L 120.50 505.25 L 123.50 510.00 L 126.25 512.75 L 128.25 513.00 L 129.00 513.50 L 129.25 517.00 L 130.25 518.25 L 134.25 520.75 L 137.75 524.25 L 142.00 525.00 L 145.75 527.25 L 146.50 527.25 L 149.75 528.75 L 151.25 530.00 L 156.25 529.75 L 157.75 530.75 L 159.75 531.25 L 162.75 531.00 L 166.75 531.25 L 167.75 531.75 L 173.00 532.00 L 177.00 531.75 L 181.00 530.50 L 182.75 530.50 L 189.00 527.00 L 191.75 526.00 L 194.00 525.75 L 196.50 523.25 L 198.00 522.50 L 199.75 522.50 L 200.50 521.00 L 204.50 516.75 L 205.75 516.50 L 206.75 517.75 L 206.25 520.00 L 207.25 522.00 L 207.00 529.25 L 207.50 530.00 L 209.00 530.75 L 210.25 530.75 L 212.25 531.50 L 214.50 531.50 L 217.50 529.75 L 219.00 528.25 L 219.50 526.75 L 219.00 521.75 L 219.25 517.25 L 218.75 514.75 L 219.50 513.00 L 219.50 507.75 L 218.25 503.50 L 218.75 501.50 L 218.50 498.00 L 219.00 496.00 L 218.25 494.50 L 217.75 483.50 L 218.75 478.50 L 218.50 474.00 L 218.00 472.00 L 218.25 469.75 L 217.75 468.25 L 218.25 466.25 L 218.25 457.00 L 217.75 455.50 L 218.00 451.50 L 217.25 450.25 L 217.25 449.25 L 218.50 446.50 L 218.50 443.50 L 217.50 437.50 L 216.50 435.75 L 213.00 434.50 L 208.25 434.50 L 207.00 435.25 L 206.75 436.75 L 207.25 437.75 L 207.25 440.50 L 206.00 444.25 L 206.50 448.50 L 206.00 449.50 L 205.00 449.50 L 201.75 446.50 L 199.25 445.00 L 197.75 443.25 L 194.75 442.25 L 191.25 440.00 L 187.25 439.25 L 184.50 437.25 L 181.50 437.25 L 179.25 435.50 L 175.50 435.50 L 173.00 434.50 L 171.00 434.50 L 169.75 435.00 L 164.75 435.00 L 163.25 436.00 L 162.50 436.00 L 161.75 435.25 L 160.50 435.00 L 157.75 436.25 L 155.75 436.25 L 154.25 437.00 L 150.50 437.25 L 148.75 439.00 L 145.25 438.50 L 142.25 440.25 L 139.25 444.00 L 136.00 445.75 L 133.75 448.75 L 132.50 449.00 L 130.50 448.25 Z M 172.00 445.50 L 172.25 445.75 L 174.25 445.75 L 175.00 446.25 L 178.50 446.25 L 178.75 446.50 L 180.25 446.75 L 182.00 448.00 L 184.25 449.00 L 186.25 450.50 L 189.00 451.75 L 191.75 453.75 L 194.00 454.75 L 194.75 455.50 L 195.50 457.25 L 196.00 457.50 L 197.75 457.50 L 198.25 457.75 L 199.00 458.75 L 199.25 460.00 L 200.50 462.00 L 201.25 463.75 L 201.25 466.00 L 201.50 466.50 L 204.00 468.00 L 204.75 469.00 L 204.75 470.00 L 204.00 470.75 L 203.75 472.50 L 205.75 474.75 L 206.25 475.75 L 206.25 478.75 L 206.00 479.00 L 205.75 481.50 L 206.00 481.75 L 206.00 483.50 L 206.25 483.75 L 206.25 486.50 L 206.50 486.75 L 206.50 487.75 L 206.25 488.50 L 204.00 490.50 L 203.00 492.75 L 203.00 494.25 L 203.50 495.25 L 204.75 496.00 L 205.00 496.75 L 203.75 499.75 L 201.75 501.75 L 200.75 504.00 L 199.00 506.00 L 198.00 506.50 L 197.75 507.00 L 195.25 509.25 L 195.00 510.00 L 191.00 514.00 L 190.50 514.25 L 188.50 514.50 L 188.25 514.75 L 187.00 514.75 L 183.25 517.25 L 181.75 517.25 L 181.50 517.50 L 179.75 517.75 L 178.75 518.50 L 177.25 518.75 L 176.25 519.25 L 172.50 519.25 L 172.25 519.00 L 171.00 519.00 L 170.75 518.75 L 169.50 519.25 L 168.75 520.00 L 167.00 520.25 L 166.75 520.00 L 162.25 520.00 L 159.50 519.00 L 156.50 519.00 L 156.25 518.75 L 155.25 518.75 L 154.50 518.25 L 152.50 517.75 L 151.25 517.00 L 149.25 516.75 L 147.00 514.00 L 144.75 513.50 L 142.75 511.25 L 141.75 511.00 L 139.25 509.75 L 138.25 508.75 L 137.75 507.50 L 136.75 506.25 L 134.75 504.25 L 134.25 503.00 L 134.25 501.50 L 134.00 501.00 L 133.00 500.25 L 131.25 500.00 L 130.00 499.00 L 129.75 498.50 L 129.75 496.50 L 129.50 496.25 L 129.25 493.75 L 128.75 492.75 L 128.75 492.00 L 127.75 490.00 L 128.00 488.25 L 128.50 487.75 L 129.00 486.50 L 129.00 485.50 L 128.00 482.50 L 127.75 478.00 L 129.00 474.75 L 129.25 472.75 L 130.00 471.00 L 129.75 468.25 L 131.50 466.25 L 132.00 464.00 L 133.50 462.50 L 135.25 461.75 L 135.75 461.25 L 136.25 460.25 L 136.25 458.75 L 136.50 458.25 L 137.50 457.25 L 138.25 457.00 L 139.25 455.75 L 142.50 452.75 L 146.75 451.50 L 149.00 450.25 L 150.75 450.00 L 151.25 449.50 L 156.00 447.25 L 158.50 447.00 L 160.00 446.25 L 165.50 446.25 L 165.75 446.00 L 167.00 446.00 L 168.50 445.50 Z M 275.75 434.50 L 274.50 434.00 L 267.50 433.25 L 263.00 435.75 L 261.00 435.75 L 258.50 436.75 L 255.00 439.50 L 251.25 439.00 L 247.25 434.50 L 246.00 434.00 L 241.00 434.25 L 238.75 435.75 L 238.25 436.75 L 238.50 441.50 L 239.00 442.25 L 239.00 445.75 L 238.25 447.25 L 238.75 448.50 L 238.25 453.75 L 237.75 454.50 L 238.25 457.75 L 237.50 459.25 L 237.75 460.75 L 237.25 461.75 L 237.25 464.00 L 239.00 468.75 L 238.75 472.50 L 239.25 479.75 L 238.75 481.50 L 240.00 484.00 L 240.00 486.00 L 238.25 489.50 L 238.75 495.75 L 238.50 508.25 L 237.25 509.75 L 236.25 509.00 L 234.75 500.25 L 235.75 488.75 L 234.50 486.00 L 234.75 482.50 L 233.75 480.25 L 234.00 475.25 L 234.75 473.25 L 234.25 467.50 L 235.25 461.75 L 235.25 459.50 L 234.25 456.75 L 234.75 446.25 L 234.00 444.50 L 234.00 438.75 L 233.25 436.25 L 230.00 434.00 L 225.75 434.25 L 222.50 436.75 L 221.75 438.25 L 221.50 441.75 L 223.00 444.75 L 222.75 449.50 L 221.00 452.75 L 221.50 453.50 L 221.25 459.25 L 222.25 461.25 L 223.25 465.25 L 222.75 470.00 L 222.00 472.00 L 223.00 487.50 L 222.00 489.50 L 222.25 492.75 L 220.50 496.50 L 222.50 499.50 L 222.00 501.25 L 222.25 504.25 L 221.50 506.50 L 221.75 509.25 L 221.25 510.25 L 221.50 512.25 L 222.75 514.00 L 222.00 520.00 L 222.00 524.25 L 223.75 528.00 L 224.00 529.50 L 225.00 530.75 L 229.25 531.50 L 232.75 529.75 L 234.25 528.50 L 236.00 524.25 L 236.00 515.75 L 236.25 514.25 L 237.00 513.25 L 237.50 514.00 L 237.25 515.75 L 238.75 517.00 L 239.25 521.50 L 239.00 525.25 L 240.00 528.75 L 241.75 530.25 L 243.50 530.75 L 247.75 530.50 L 251.75 528.25 L 252.25 513.25 L 251.75 512.00 L 252.00 508.25 L 251.50 507.50 L 252.25 501.75 L 252.25 496.25 L 251.25 493.25 L 251.00 486.75 L 251.50 482.50 L 251.25 478.50 L 250.50 476.50 L 250.50 471.25 L 251.25 469.25 L 251.75 462.00 L 253.75 458.50 L 255.50 453.25 L 258.00 451.25 L 260.75 448.00 L 265.75 445.50 L 268.75 445.25 L 270.50 444.50 L 272.25 444.50 L 273.50 445.25 L 275.25 444.75 L 276.75 441.50 L 276.50 438.00 L 277.00 437.00 L 277.00 436.00 Z M 337.50 438.75 L 332.25 447.00 L 329.50 448.25 L 328.50 453.00 L 327.00 455.25 L 327.00 460.75 L 328.50 462.75 L 327.75 466.00 L 329.50 468.50 L 331.50 474.25 L 334.75 478.75 L 339.00 482.50 L 351.00 488.00 L 357.25 487.75 L 362.00 488.50 L 369.25 488.50 L 370.50 487.75 L 374.25 487.50 L 377.00 488.25 L 393.00 487.50 L 394.75 488.25 L 401.50 488.50 L 404.25 491.25 L 407.50 492.75 L 409.00 494.75 L 410.00 497.25 L 409.50 504.50 L 410.75 505.75 L 410.25 509.25 L 403.00 516.25 L 394.75 518.25 L 373.25 517.75 L 354.25 518.50 L 335.50 518.25 L 329.75 519.00 L 328.75 520.25 L 328.00 523.50 L 328.25 527.25 L 330.25 529.25 L 334.50 530.75 L 342.00 530.00 L 350.50 530.50 L 357.25 529.75 L 364.25 529.75 L 367.25 530.50 L 376.75 529.75 L 386.00 530.50 L 389.00 529.75 L 398.00 529.50 L 400.50 528.50 L 403.25 528.75 L 414.25 523.50 L 419.75 517.75 L 421.50 513.50 L 423.00 511.50 L 422.75 501.75 L 423.50 498.00 L 422.00 496.00 L 421.25 492.75 L 419.25 490.50 L 418.25 488.00 L 412.50 481.50 L 403.00 477.00 L 401.00 477.25 L 397.25 476.00 L 388.00 476.00 L 387.00 476.50 L 373.75 476.00 L 368.25 477.00 L 365.25 476.25 L 353.50 476.00 L 349.50 473.00 L 347.25 472.50 L 344.00 470.25 L 340.25 462.25 L 340.25 458.00 L 343.00 453.50 L 343.00 451.00 L 349.75 445.25 L 352.50 444.50 L 360.00 445.25 L 362.75 444.25 L 366.00 444.00 L 378.00 444.75 L 380.25 444.00 L 388.00 443.75 L 390.25 445.00 L 395.75 445.00 L 398.75 444.00 L 405.50 444.25 L 408.25 445.00 L 414.00 444.75 L 416.50 443.50 L 419.25 443.50 L 421.25 441.50 L 421.00 433.75 L 418.75 433.75 L 416.75 432.75 L 412.00 433.00 L 411.00 432.50 L 402.75 432.50 L 401.00 433.00 L 395.00 432.50 L 383.75 432.50 L 382.75 433.00 L 367.50 432.50 L 362.00 433.00 L 355.00 432.25 L 350.25 434.00 L 347.50 434.00 Z M 585.75 432.25 L 581.50 434.25 L 578.25 434.75 L 576.00 435.75 L 574.50 436.75 L 572.50 437.50 L 569.00 440.25 L 565.75 442.00 L 557.50 450.50 L 557.25 451.25 L 556.00 452.50 L 555.00 453.00 L 554.75 454.75 L 553.00 457.00 L 552.75 459.25 L 552.00 460.75 L 552.00 462.50 L 549.75 468.25 L 549.25 472.50 L 548.50 474.00 L 548.50 477.00 L 548.00 477.75 L 548.00 479.75 L 547.75 480.00 L 549.25 482.75 L 549.75 484.50 L 549.75 488.50 L 550.00 488.75 L 549.50 490.00 L 549.50 491.50 L 551.00 493.50 L 552.00 496.25 L 555.00 501.50 L 556.25 505.50 L 558.75 507.75 L 559.00 510.00 L 562.00 512.25 L 566.75 517.50 L 571.00 519.75 L 572.75 520.25 L 575.50 522.25 L 579.75 524.50 L 583.25 526.00 L 585.75 526.25 L 588.25 527.75 L 594.25 528.00 L 596.75 528.50 L 598.00 528.50 L 599.75 528.00 L 601.00 528.25 L 604.00 528.25 L 604.25 528.00 L 609.75 528.25 L 613.50 526.75 L 615.25 526.75 L 616.50 526.25 L 619.75 525.75 L 622.50 524.25 L 624.50 524.25 L 628.50 522.00 L 632.50 520.75 L 633.50 519.75 L 634.25 517.75 L 635.00 517.00 L 637.25 516.00 L 642.25 510.50 L 644.00 509.50 L 644.75 506.50 L 648.50 499.50 L 648.50 497.25 L 649.25 495.75 L 649.25 494.75 L 650.75 491.50 L 650.50 483.75 L 651.00 481.25 L 652.00 479.50 L 652.00 478.00 L 651.00 474.75 L 651.00 472.75 L 650.25 471.25 L 650.50 466.50 L 650.25 465.75 L 648.75 464.00 L 645.75 456.75 L 641.25 452.25 L 640.75 451.25 L 640.75 450.50 L 639.00 447.75 L 637.00 445.75 L 635.00 444.50 L 633.50 443.00 L 632.75 441.25 L 631.75 440.25 L 628.75 440.00 L 627.50 439.00 L 621.75 436.25 L 619.25 435.50 L 618.25 435.50 L 614.75 433.75 L 612.00 433.50 L 609.75 432.75 L 607.50 432.75 L 605.25 431.50 L 602.00 431.50 L 601.75 431.75 L 595.75 431.50 L 595.50 431.75 L 592.75 431.75 L 592.50 432.00 L 590.00 432.00 L 589.75 432.25 Z M 591.25 443.50 L 592.50 443.50 L 592.75 443.25 L 595.75 443.25 L 596.00 443.00 L 598.25 443.00 L 598.50 443.25 L 601.00 443.00 L 601.25 443.25 L 602.25 443.25 L 602.50 443.50 L 608.75 443.75 L 611.50 445.25 L 612.50 445.50 L 613.50 446.25 L 614.00 446.25 L 615.75 447.00 L 616.50 447.75 L 618.25 448.50 L 619.50 449.50 L 626.75 453.25 L 628.50 455.25 L 630.50 456.75 L 632.25 460.75 L 632.75 461.25 L 633.50 463.00 L 634.50 464.25 L 635.00 466.00 L 635.75 467.00 L 637.25 470.00 L 637.25 471.25 L 637.00 471.50 L 637.00 472.50 L 636.75 472.75 L 637.25 475.25 L 636.75 476.25 L 636.75 477.50 L 637.25 478.50 L 638.50 480.00 L 638.25 484.50 L 637.75 485.25 L 637.75 486.00 L 637.50 486.25 L 637.50 488.25 L 637.00 489.50 L 637.00 492.25 L 634.50 497.25 L 633.75 498.00 L 632.50 500.50 L 631.25 501.75 L 630.25 504.00 L 628.00 506.50 L 627.25 506.75 L 625.00 508.50 L 623.25 509.25 L 621.50 510.50 L 618.50 512.00 L 617.75 512.00 L 615.50 513.25 L 615.00 513.25 L 613.25 514.50 L 610.75 515.50 L 610.00 515.50 L 609.75 515.75 L 606.25 515.50 L 605.00 516.00 L 602.75 516.00 L 600.75 516.75 L 595.00 516.75 L 594.75 516.50 L 592.25 516.00 L 589.00 514.25 L 586.75 514.50 L 584.50 513.50 L 581.75 511.50 L 580.75 511.00 L 580.25 511.00 L 578.75 510.00 L 577.50 509.50 L 575.50 507.50 L 574.00 506.50 L 571.75 504.25 L 571.75 504.00 L 571.00 503.50 L 570.00 501.50 L 567.00 498.75 L 566.25 497.00 L 566.00 495.50 L 563.50 491.75 L 563.25 490.75 L 561.75 488.00 L 561.75 487.25 L 561.50 487.00 L 561.50 483.00 L 561.75 482.75 L 561.75 475.25 L 562.75 473.00 L 562.50 470.25 L 562.75 470.00 L 563.50 467.25 L 564.00 466.50 L 564.25 465.00 L 565.50 462.25 L 566.75 460.75 L 567.25 459.50 L 569.75 457.00 L 570.25 456.00 L 570.25 455.00 L 570.50 454.50 L 572.00 453.50 L 573.75 453.25 L 574.75 452.75 L 576.25 451.25 L 576.75 450.25 L 576.75 449.75 L 578.25 448.25 L 579.25 447.75 L 579.75 447.75 L 581.00 447.00 L 581.50 447.00 L 583.25 446.25 L 584.00 446.25 L 586.25 445.25 L 589.25 444.75 L 589.75 444.25 Z M 655.25 432.50 L 653.25 435.75 L 652.50 446.50 L 654.25 449.25 L 653.75 461.00 L 654.00 464.75 L 655.00 466.75 L 655.00 473.25 L 653.75 478.25 L 654.50 482.50 L 655.25 484.00 L 655.00 487.25 L 655.50 491.75 L 654.75 493.50 L 654.75 495.50 L 655.25 496.25 L 655.00 499.50 L 655.75 501.00 L 656.00 510.75 L 655.50 513.00 L 656.25 514.25 L 657.00 522.50 L 656.75 525.25 L 657.50 526.50 L 660.25 527.75 L 664.50 528.25 L 665.75 527.75 L 669.50 523.50 L 669.50 511.00 L 668.75 509.25 L 669.00 502.00 L 667.75 494.50 L 667.75 486.00 L 668.25 483.50 L 667.50 481.25 L 668.00 468.25 L 670.25 463.25 L 673.75 457.50 L 676.00 455.25 L 677.25 452.50 L 680.00 450.50 L 685.25 448.25 L 687.00 447.00 L 691.00 445.75 L 692.75 444.00 L 694.75 443.00 L 697.50 442.50 L 712.00 442.75 L 715.25 444.50 L 720.50 445.00 L 725.50 448.50 L 731.50 451.25 L 733.50 454.50 L 737.50 458.00 L 739.50 461.25 L 741.25 465.50 L 743.00 467.75 L 743.25 477.00 L 743.75 478.50 L 743.50 483.75 L 744.50 485.50 L 743.50 497.50 L 744.00 500.50 L 745.25 502.25 L 745.50 510.75 L 744.50 513.50 L 744.50 515.50 L 745.75 519.25 L 745.75 521.50 L 747.75 525.75 L 749.75 527.50 L 752.00 527.75 L 756.00 527.25 L 758.00 526.00 L 760.75 521.50 L 760.75 517.50 L 759.00 512.25 L 759.75 506.50 L 759.75 497.25 L 759.00 495.75 L 759.50 490.75 L 758.75 489.25 L 758.75 485.50 L 757.50 481.25 L 757.00 472.25 L 756.25 468.75 L 756.50 464.00 L 755.25 461.25 L 753.50 459.50 L 752.50 457.00 L 750.50 454.50 L 747.50 448.50 L 740.50 441.75 L 731.25 436.25 L 727.50 435.50 L 724.25 434.00 L 723.25 433.00 L 721.00 432.75 L 718.00 431.25 L 712.75 431.00 L 711.00 431.50 L 706.75 430.50 L 700.25 430.50 L 698.25 431.25 L 695.25 431.00 L 690.00 433.00 L 685.50 433.25 L 682.75 435.00 L 673.00 439.50 L 669.50 442.50 L 666.75 443.75 L 666.25 443.00 L 666.25 434.25 L 665.00 432.25 L 657.75 430.50 Z M 12.25 404.75 L 11.75 405.50 L 12.00 408.75 L 10.50 411.25 L 10.75 417.25 L 11.50 420.00 L 10.25 422.25 L 11.25 427.00 L 10.00 430.75 L 12.25 436.75 L 11.50 440.25 L 11.50 455.00 L 10.25 457.00 L 10.75 467.00 L 11.75 471.25 L 10.50 473.50 L 10.50 477.25 L 11.25 479.50 L 9.00 482.50 L 10.00 490.00 L 8.00 494.00 L 8.00 495.50 L 9.75 497.75 L 10.25 501.50 L 9.25 507.50 L 9.75 508.75 L 9.50 511.25 L 10.25 513.00 L 10.00 516.50 L 12.50 520.25 L 12.25 521.50 L 10.50 523.25 L 11.00 531.00 L 14.00 531.50 L 16.50 532.75 L 20.25 530.75 L 22.75 527.50 L 19.75 516.75 L 19.50 512.50 L 20.00 510.75 L 21.75 510.75 L 22.50 509.75 L 21.50 506.00 L 22.00 503.75 L 20.00 499.50 L 20.50 497.50 L 21.75 496.25 L 21.50 494.25 L 22.00 493.25 L 21.00 490.75 L 21.00 484.50 L 20.25 481.75 L 22.00 478.50 L 22.25 471.00 L 24.50 469.00 L 27.25 461.50 L 30.50 458.75 L 30.75 457.00 L 32.00 455.50 L 37.50 452.75 L 39.75 450.00 L 43.25 448.25 L 44.25 448.25 L 46.00 449.50 L 51.75 446.50 L 56.50 445.75 L 63.25 446.75 L 65.00 445.25 L 67.00 445.00 L 71.25 447.75 L 78.50 448.00 L 80.00 449.25 L 80.00 451.25 L 83.00 452.00 L 86.50 454.50 L 90.50 455.25 L 91.50 456.50 L 91.75 459.25 L 94.00 460.50 L 95.25 462.00 L 95.00 463.25 L 98.25 465.75 L 98.75 470.50 L 96.50 473.00 L 100.50 475.75 L 103.00 480.25 L 102.25 486.75 L 102.50 490.00 L 101.00 492.25 L 102.50 494.75 L 102.50 496.00 L 101.00 498.75 L 102.00 501.50 L 100.50 504.50 L 100.50 507.00 L 101.50 510.25 L 100.00 512.50 L 100.75 515.50 L 99.00 517.75 L 99.25 520.00 L 100.75 522.25 L 100.75 523.50 L 99.25 524.75 L 99.25 525.50 L 101.50 527.25 L 101.25 530.00 L 104.50 534.00 L 107.00 534.00 L 111.00 531.50 L 112.50 529.25 L 111.75 522.00 L 112.75 519.50 L 111.75 517.75 L 111.75 516.00 L 113.50 514.00 L 112.00 511.00 L 112.50 503.75 L 114.25 502.50 L 114.25 502.00 L 112.25 501.25 L 110.50 496.00 L 111.50 489.75 L 111.25 480.75 L 110.25 478.50 L 111.00 475.75 L 111.00 472.25 L 110.25 471.00 L 110.00 468.00 L 106.25 462.75 L 105.25 458.25 L 102.00 453.00 L 97.75 450.50 L 91.50 444.00 L 89.50 443.75 L 84.00 441.00 L 81.50 440.75 L 79.75 439.25 L 76.50 438.75 L 73.00 437.25 L 62.00 437.50 L 59.50 436.25 L 55.00 438.25 L 55.00 440.50 L 53.25 438.25 L 50.25 437.75 L 45.00 440.25 L 42.00 439.75 L 38.75 441.00 L 36.00 443.75 L 29.75 446.25 L 29.00 447.75 L 27.00 449.00 L 24.50 452.25 L 20.25 452.50 L 19.75 450.50 L 20.75 448.75 L 20.00 445.75 L 20.50 442.00 L 19.50 437.25 L 19.00 428.50 L 20.50 426.50 L 20.50 424.00 L 19.50 421.25 L 18.75 410.75 L 20.25 409.00 L 20.50 407.50 L 19.75 405.50 L 18.50 404.25 Z M 223.00 401.00 L 222.00 402.00 L 222.00 402.25 L 221.75 402.50 L 221.75 405.00 L 221.50 405.25 L 221.50 406.25 L 221.25 406.50 L 221.25 406.75 L 221.50 407.00 L 221.50 408.00 L 221.75 408.25 L 221.75 409.50 L 222.00 409.75 L 222.00 411.00 L 222.25 411.25 L 222.25 411.75 L 222.50 412.00 L 222.50 414.50 L 222.25 414.75 L 222.25 416.25 L 222.50 416.50 L 222.50 416.75 L 222.75 417.00 L 222.75 417.25 L 223.00 417.50 L 223.00 417.75 L 225.00 419.75 L 225.50 419.75 L 225.75 420.00 L 227.25 420.00 L 227.50 419.75 L 230.75 419.75 L 231.00 419.50 L 231.25 419.50 L 231.50 419.25 L 231.75 419.25 L 232.00 419.00 L 232.25 419.00 L 233.00 418.25 L 233.00 418.00 L 233.25 417.75 L 233.25 417.00 L 233.50 416.75 L 233.50 416.50 L 233.25 416.25 L 233.25 413.50 L 233.50 413.25 L 233.50 412.50 L 233.75 412.25 L 233.75 410.50 L 233.50 410.25 L 233.50 406.75 L 233.75 406.50 L 233.75 403.75 L 233.50 403.50 L 233.50 403.25 L 233.25 403.00 L 233.25 402.75 L 233.00 402.50 L 233.00 402.25 L 232.00 401.25 L 231.75 401.25 L 231.50 401.00 L 229.50 401.00 L 229.25 401.25 L 226.75 401.25 L 226.50 401.00 L 226.00 401.00 L 225.75 400.75 L 223.75 400.75 L 223.50 401.00 Z M 541.00 399.25 L 539.25 398.50 L 533.25 398.50 L 530.25 400.75 L 529.75 408.25 L 531.00 409.75 L 530.50 412.50 L 531.25 414.75 L 530.25 416.75 L 530.50 420.25 L 529.75 425.75 L 531.25 427.00 L 531.00 441.75 L 529.50 443.00 L 529.50 444.00 L 531.75 445.25 L 531.25 447.25 L 531.50 452.75 L 530.75 455.75 L 531.00 459.00 L 530.50 459.50 L 529.00 459.00 L 529.25 454.00 L 527.75 451.00 L 527.25 448.25 L 527.25 437.25 L 527.75 435.50 L 527.00 434.00 L 525.00 432.50 L 519.00 432.25 L 514.25 434.25 L 514.00 435.75 L 515.00 437.50 L 515.50 442.25 L 515.25 444.75 L 514.25 445.75 L 509.00 441.50 L 495.00 435.00 L 490.50 434.50 L 488.00 432.50 L 484.00 433.00 L 474.25 432.25 L 469.00 432.50 L 466.50 433.50 L 463.00 433.25 L 457.50 436.25 L 455.25 436.50 L 446.50 440.75 L 440.75 445.75 L 437.25 449.75 L 435.25 450.75 L 432.75 456.50 L 430.00 460.75 L 429.50 462.50 L 430.00 464.75 L 426.50 470.75 L 427.25 474.00 L 426.25 482.75 L 426.75 487.75 L 428.00 490.00 L 428.50 496.25 L 430.50 498.75 L 431.00 501.25 L 435.25 508.25 L 438.75 512.75 L 441.00 513.75 L 446.00 518.75 L 449.50 521.25 L 463.50 527.75 L 466.75 527.50 L 470.00 528.50 L 482.00 528.50 L 483.50 529.00 L 493.75 528.00 L 503.00 524.00 L 515.00 516.75 L 516.50 518.25 L 516.25 521.00 L 517.75 525.50 L 519.25 527.25 L 522.25 528.75 L 527.75 528.25 L 530.25 525.25 L 529.75 515.75 L 530.25 506.75 L 530.00 500.00 L 529.25 497.50 L 529.50 491.75 L 528.50 481.25 L 528.75 470.75 L 528.00 463.75 L 528.25 462.50 L 530.00 461.75 L 532.25 463.00 L 531.75 475.25 L 530.00 478.75 L 530.50 479.75 L 532.00 479.75 L 533.00 481.25 L 532.50 488.75 L 530.75 490.50 L 532.50 492.75 L 531.50 494.00 L 531.25 496.50 L 533.00 498.75 L 533.25 507.25 L 532.75 509.75 L 534.25 511.25 L 533.50 514.25 L 533.75 525.50 L 534.50 526.50 L 538.75 528.50 L 543.25 528.50 L 544.50 527.75 L 546.25 525.50 L 547.00 516.50 L 546.25 508.50 L 545.50 507.00 L 546.25 505.00 L 546.75 498.00 L 545.75 496.25 L 545.25 488.75 L 546.25 485.75 L 546.25 481.00 L 545.00 478.50 L 545.75 466.50 L 544.00 461.25 L 544.00 458.75 L 545.25 454.25 L 544.50 446.50 L 543.25 443.75 L 544.75 435.75 L 542.75 430.75 L 543.00 425.50 L 544.00 422.75 L 543.00 416.75 L 543.75 403.00 L 543.25 401.50 Z M 470.25 444.25 L 479.50 444.00 L 479.75 444.25 L 483.00 444.25 L 484.75 445.25 L 488.50 445.25 L 489.50 445.75 L 491.25 446.00 L 492.50 447.00 L 494.25 447.75 L 494.75 448.25 L 496.25 449.00 L 496.75 449.00 L 499.00 450.25 L 500.25 450.50 L 501.50 451.25 L 502.50 451.50 L 503.50 452.50 L 504.25 454.50 L 507.00 457.00 L 508.00 459.25 L 508.75 460.00 L 509.75 460.25 L 510.50 460.75 L 511.00 463.00 L 511.75 464.00 L 515.25 471.00 L 515.25 471.50 L 515.75 472.50 L 515.75 473.25 L 516.00 473.50 L 516.00 476.50 L 515.75 476.75 L 515.75 477.25 L 516.00 477.50 L 516.00 481.25 L 515.75 481.50 L 515.75 482.75 L 515.50 483.00 L 515.50 484.00 L 515.00 485.25 L 514.75 488.75 L 514.25 490.00 L 513.25 491.25 L 513.00 493.00 L 512.75 493.25 L 512.75 495.00 L 512.50 495.25 L 512.25 496.50 L 511.50 497.75 L 511.25 499.00 L 509.25 503.00 L 503.75 508.25 L 501.50 509.50 L 500.25 510.75 L 499.25 511.25 L 497.75 512.50 L 495.75 513.50 L 495.25 513.50 L 493.50 514.25 L 492.00 514.25 L 491.75 514.50 L 490.00 514.75 L 488.75 515.75 L 487.00 516.50 L 485.75 516.50 L 485.50 516.75 L 481.75 516.75 L 479.75 517.50 L 475.75 517.50 L 475.50 517.25 L 473.75 517.25 L 472.75 516.75 L 470.25 516.50 L 469.00 515.75 L 468.25 515.75 L 467.50 515.25 L 467.00 515.25 L 466.00 514.75 L 465.25 514.75 L 465.00 514.50 L 462.50 514.00 L 460.50 512.75 L 458.50 512.25 L 456.50 511.25 L 454.00 508.75 L 451.75 507.50 L 444.75 500.25 L 444.25 499.25 L 444.25 498.75 L 443.00 496.75 L 443.00 496.00 L 441.25 492.75 L 441.25 492.25 L 441.00 492.00 L 441.00 489.25 L 440.75 489.00 L 440.75 488.50 L 440.00 487.75 L 439.25 486.25 L 439.25 485.50 L 439.50 485.25 L 439.25 481.50 L 439.50 481.25 L 439.50 479.75 L 439.75 479.50 L 439.50 473.75 L 439.75 473.50 L 439.75 472.75 L 441.00 470.75 L 441.00 470.00 L 441.25 469.75 L 441.25 467.50 L 444.00 461.75 L 444.00 460.00 L 444.25 459.50 L 446.75 457.25 L 448.25 456.50 L 449.00 455.75 L 449.50 454.75 L 452.25 451.75 L 453.25 451.25 L 453.75 451.25 L 455.75 450.00 L 456.75 449.75 L 458.25 448.50 L 460.25 448.25 L 461.25 447.75 L 462.50 446.50 L 465.00 446.00 L 465.25 445.75 L 466.00 445.75 L 466.25 445.50 L 468.50 445.50 Z M 192.25 22.25 L 176.25 38.75 L 172.25 57.75 L 168.25 59.75 L 170.50 62.25 L 167.75 71.00 L 169.75 97.50 L 167.75 102.25 L 171.75 177.75 L 168.25 189.75 L 173.50 194.75 L 188.25 193.50 L 185.50 73.25 L 189.25 56.75 L 200.50 40.00 L 212.25 31.25 L 227.25 26.75 L 245.50 27.50 L 256.00 32.50 L 257.50 188.75 L 262.75 194.25 L 272.25 194.75 L 276.00 191.50 L 273.25 33.50 L 280.50 27.75 L 299.00 26.25 L 318.00 32.75 L 333.00 46.50 L 342.00 68.00 L 346.00 322.00 L 350.50 340.00 L 359.50 355.50 L 376.50 369.00 L 404.00 379.75 L 417.25 380.00 L 442.75 373.00 L 470.25 379.25 L 491.50 377.50 L 518.75 362.25 L 530.50 348.50 L 539.25 319.75 L 539.00 254.25 L 535.25 189.75 L 523.00 188.00 L 518.00 191.25 L 522.25 317.25 L 518.75 331.75 L 498.75 354.25 L 477.25 361.00 L 457.50 357.50 L 452.00 351.50 L 448.50 193.50 L 443.00 188.50 L 430.25 190.50 L 433.25 355.00 L 419.00 361.50 L 396.00 358.00 L 384.50 351.25 L 373.25 340.00 L 363.75 314.50 L 364.75 271.50 L 362.75 266.00 L 363.50 210.00 L 361.25 185.25 L 365.00 181.50 L 360.50 172.25 L 360.00 64.25 L 350.50 38.75 L 341.00 26.50 L 319.75 12.25 L 299.25 8.25 L 279.50 9.25 L 264.00 15.00 L 245.00 9.00 L 219.25 9.25 L 209.25 11.75 Z" fill="currentColor" fill-rule="evenodd"/></svg>
+    </a>
+
+    <nav class="main-nav" id="main-nav" aria-label="Primary">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#location">Hours &amp; Location</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header-actions">
+      <a class="btn btn-primary" href="https://margaretdolubizno.glossgenius.com" data-booking-link target="_blank" rel="noopener">Book Now</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Park Ridge, Illinois · Sola Salons</p>
+        <h1 class="typed-h1" aria-label="Almost three decades behind the chair."><span class="typed-ghost" aria-hidden="true">Almost three decades behind the chair.<span class="typed-cursor">|</span></span><span class="typed-live" aria-hidden="true"><span class="typed-words"></span><span class="typed-cursor">|</span></span></h1>
+        <p class="hero-lede">
+          MW Hair Salon is Margaret Dolubizno's private, one-woman studio in Park Ridge,
+          built around healthy hair and a healthy scalp. Organic, ammonia-free color and
+          treatments that care for your hair, not just its look.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="https://margaretdolubizno.glossgenius.com" data-booking-link target="_blank" rel="noopener">Book an Appointment</a>
+        </div>
+        <p class="hero-callnote">or call (224) 388-9356</p>
+      </div>
+      <div class="hero-media">
+        <img class="hero-portrait" src="assets/images/margaret-portrait.jpg" alt="Margaret Dolubizno, owner and stylist at MW Hair Salon" width="647" height="1400">
+        <div class="hero-media-note">
+          <p>&ldquo;I feel so safe and comfortable&hellip; you won't be disappointed choosing Margaret.&rdquo;</p>
+          <span>Gerri H., Park Ridge, IL</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" data-phrase="One chair. Her full attention." aria-hidden="true"><div class="marquee-track"></div></div>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap about-grid">
+      <div class="about-media">
+        <img class="about-photo" src="assets/images/salon-interior-2.jpg" alt="Styling station at MW Hair Salon, Park Ridge" width="1050" height="1400">
+        <img class="about-photo about-photo-accent" src="assets/images/salon-interior-1.jpg" alt="Wash station at MW Hair Salon" width="1050" height="1400">
+      </div>
+      <div class="about-copy">
+        <p class="eyebrow">The studio</p>
+        <h2>One chair. Her full attention.</h2>
+        <p>
+          Margaret Dolubizno has spent almost three decades caring for hair, and she cares about
+          scalp health just as much. Ask her about it and she's happy to share what she knows.
+        </p>
+        <p>
+          The salon runs on an organic, 100% ammonia-free color system, and Margaret offers
+          hot-scissor and thermocut techniques for a precise, healthy finish. It's a small, calm
+          space inside Sola Salons in Park Ridge. No rush, no rotating stylists, no guessing.
+        </p>
+        <ul class="about-facts">
+          <li><strong>Almost three decades</strong> of experience behind the chair</li>
+          <li><strong>Organic, ammonia-free</strong> color system</li>
+          <li>A genuine advocate for <strong>scalp health</strong>, not just the cut</li>
+          <li>A private, <strong>one-woman studio</strong>, just you and Margaret</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="services">
+    <div class="wrap">
+      <p class="eyebrow">What Margaret offers</p>
+      <h2>Services</h2>
+      <p class="section-lede">
+        Prices are available when you book online or by phone call.
+      </p>
+
+      <div class="services-grid">
+        <div class="service-group">
+          <h3>Hair Services</h3>
+          <ul>
+            <li>Women's Haircut</li>
+            <li>Shampoo, Blow Dry &amp; Finish</li>
+            <li>Thermocut</li>
+            <li>Men's Haircut</li>
+            <li>Men's Thermocut</li>
+            <li>Neckline Clean</li>
+            <li>Beard Trim</li>
+            <li>Mustache Trim</li>
+            <li>Bang Trim</li>
+            <li>Children's Haircut (12 &amp; under)</li>
+            <li>Special-Occasion Up/Down Do</li>
+            <li>Deep Conditioning</li>
+            <li>Hair Extensions</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <h3>Organic Color System</h3>
+          <p class="service-group-note">Consultation &amp; hair analysis included.</p>
+          <ul>
+            <li>Single Process</li>
+            <li>Partial Foil</li>
+            <li>Full Foil</li>
+            <li>Balayage / Ombré</li>
+            <li>Glaze / Shine</li>
+            <li>Pin-Point Highlights</li>
+            <li>Men's Grey Blending</li>
+            <li>Toner / Glaze</li>
+          </ul>
+        </div>
+
+        <div class="service-group">
+          <h3>Special Treatments</h3>
+          <ul>
+            <li>Hair Detox Treatment</li>
+            <li>Apple Stem Cell Hair Therapy</li>
+            <li>Collagen Hair Treatment</li>
+            <li>Permanent Waves</li>
+            <li>Relaxers</li>
+            <li>Kérastase Express Ritual</li>
+            <li>Kérastase Deluxe Ritual</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="wrap">
+      <div class="gallery-head">
+        <p class="eyebrow">Recent work</p>
+        <h2>Gallery</h2>
+      </div>
+
+      <div class="bento-grid" id="bentoGrid">
+        <button type="button" class="bento-tile" style="--ar: 696 / 872" aria-label="View photo larger">
+          <img src="assets/images/gallery-hair-1.jpg" alt="Balayage color and soft curls by MW Hair Salon" loading="lazy" width="696" height="872">
+        </button>
+        <button type="button" class="bento-tile" style="--ar: 1 / 1" aria-label="View photo larger">
+          <img style="object-position:50% 30%" src="assets/images/gallery-client-1.jpg" alt="A happy client at MW Hair Salon" loading="lazy" width="448" height="598">
+        </button>
+        <button type="button" class="bento-tile" style="--ar: 3 / 4" aria-label="View photo larger">
+          <img style="object-position:50% 24%" src="assets/images/gallery-hair-2.jpg" alt="Blended highlights by MW Hair Salon" loading="lazy" width="694" height="869">
+        </button>
+        <button type="button" class="bento-tile" style="--ar: 651 / 819" aria-label="View photo larger">
+          <img src="assets/images/mw-gallery-4.jpg" alt="A happy client with a fresh blowout at MW Hair Salon" loading="lazy" width="651" height="819">
+        </button>
+        <button type="button" class="bento-tile" style="--ar: 5 / 7" aria-label="View photo larger">
+          <img style="object-position:50% 32%" src="assets/images/mw-gallery-5.jpg" alt="Long sleek straight blonde hair by MW Hair Salon" loading="lazy" width="695" height="871">
+        </button>
+        <button type="button" class="bento-tile" style="--ar: 1 / 1" aria-label="View photo larger">
+          <img style="object-position:50% 18%" src="assets/images/mw-gallery-7.jpg" alt="Men's taper fade haircut by MW Hair Salon" loading="lazy" width="661" height="838">
+        </button>
+      </div>
+
+      <div class="gallery-cta">
+        <a class="btn btn-primary btn-lg btn-instagram" href="https://www.instagram.com/margaretdolubizno" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>
+          See more of her work on Instagram
+        </a>
+      </div>
+    </div>
+
+    <div class="bento-modal" id="bentoModal" hidden>
+      <div class="bento-modal-backdrop" data-close></div>
+      <div class="bento-modal-panel" role="dialog" aria-modal="true" aria-label="Gallery photo viewer">
+        <button type="button" class="bento-modal-close" data-close aria-label="Close photo viewer">
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+        <figure class="bento-stage">
+          <img class="bento-stage-media" id="bentoStageImg" alt="">
+          <button type="button" class="bento-nav bento-nav-prev" id="bentoPrev" aria-label="Previous photo">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>
+          </button>
+          <button type="button" class="bento-nav bento-nav-next" id="bentoNext" aria-label="Next photo">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 18 15 12 9 6"/></svg>
+          </button>
+        </figure>
+        <div class="bento-dock" id="bentoDock" aria-label="Switch photo"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="marquee" data-phrase="Five stars, over and over." aria-hidden="true"><div class="marquee-track"></div></div>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <div class="wrap">
+      <p class="eyebrow">In her clients' words</p>
+      <h2>Five stars, over and over.</h2>
+      <p class="reviews-sub">Margaret's clients don't just come back. They leave reviews. The six below
+      are a handful of the many 5-star ratings she's earned across Yelp and Google, some from clients
+      who've been in her chair for years (and one who flies in from California).</p>
+      <div class="reviews-actions">
+        <a class="btn btn-yelp" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M12.9 0.6c-0.5-0.2-1.1 0-1.4 0.5L7.6 8.5c-0.4 0.8 0.2 1.7 1.1 1.7l7.9-0.5c0.9-0.1 1.4-1.1 0.9-1.8L13.6 1C13.4 0.8 13.2 0.7 12.9 0.6zM5.9 11.3l-4.4 1.4c-0.9 0.3-1.1 1.5-0.4 2.1l3.5 2.9c0.7 0.6 1.8 0.2 1.9-0.7l0.9-4.3C7.6 11.8 6.8 11 5.9 11.3zM8.5 15.9l-1.7 4.9c-0.3 0.9 0.5 1.8 1.4 1.5l4.5-1.3c0.9-0.3 1.2-1.4 0.5-2l-2.8-3.6C9.8 14.7 8.8 15 8.5 15.9zM14.3 15.2l2.5 4.2c0.5 0.8 1.7 0.7 2.1-0.1l1.9-4.2c0.4-0.9-0.3-1.8-1.2-1.7l-4.4 0.1C14.2 13.5 13.8 14.4 14.3 15.2z"/></svg>
+          Read all our reviews on Yelp
+        </a>
+        <a class="btn btn-google" href="https://www.google.com/maps/place/MW+Hair+Salon/@42.0103267,-87.8299133,17z/data=!4m17!1m8!3m7!1s0x880fc9b124746379:0x51c4a4a25279ad15!2sMW+Hair+Salon!8m2!3d42.0105322!4d-87.828153!10e5!16s%2Fg%2F11bbwqrg39!3m7!1s0x880fc9b124746379:0x51c4a4a25279ad15!8m2!3d42.0105322!4d-87.828153!9m1!1b1!16s%2Fg%2F11bbwqrg39" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><path fill="#4285F4" d="M23.5 12.3c0-.9-.1-1.5-.3-2.2H12v4.1h6.6c-.1 1.1-.9 2.8-2.5 3.9l3.8 3c2.3-2.1 3.6-5.2 3.6-8.8z"/><path fill="#34A853" d="M12 24c3.2 0 6-1.1 7.9-2.9l-3.8-3c-1 .7-2.4 1.2-4.1 1.2-3.2 0-5.8-2.1-6.8-5l-3.9 3C3.3 21.2 7.3 24 12 24z"/><path fill="#FBBC05" d="M5.2 14.3c-.2-.7-.4-1.5-.4-2.3s.1-1.6.4-2.3l-4-3C.4 8.3 0 10.1 0 12s.4 3.7 1.3 5.3l3.9-3z"/><path fill="#EA4335" d="M12 4.7c1.8 0 3 .8 3.7 1.4l3.4-3.3C17.1 1.1 14.6 0 12 0 7.3 0 3.3 2.8 1.3 6.7l4 3c.9-2.9 3.5-5 6.7-5z"/></svg>
+          Google reviews
+        </a>
+      </div>
+
+      <div class="reviews-grid">
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">AL</span>
+            <span class="review-who"><strong>Anna L.</strong><span>Arlington Heights, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;I travel from California specifically for my perfect cut and professional
+          hair and scalp advice. Her use of advanced scalp-analysis technology combined with
+          hot-scissor cutting ensures both hair health and precision.&rdquo;</p>
+          <span class="review-date">Dec 13, 2025</span>
+        </blockquote>
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">KM</span>
+            <span class="review-who"><strong>Kamila M.</strong><span>Lincoln Park, Chicago, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;In just a few months, she transformed my hair with her treatments. It's
+          noticeably thicker, softer, and healthier. She always shares useful tips on
+          supplements and herbs that support hair health.&rdquo;</p>
+          <span class="review-date">Jan 9, 2026</span>
+        </blockquote>
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">SL</span>
+            <span class="review-who"><strong>Serena L.</strong><span>Chicago, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;Once she started to cut my hair, she snipped a bit first to show me how
+          much she was going to cut and I loved that. I've had too many stylists cut off too
+          much and you never see it until the end.&rdquo;</p>
+          <span class="review-date">Nov 9, 2014</span>
+        </blockquote>
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">BB</span>
+            <span class="review-who"><strong>Brittney B.</strong><span>Chicagoland, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;I have been coming to Margaret for 5+ years now and am happy to say I will
+          never go elsewhere. My hair has never been healthier since going to her salon.&rdquo;</p>
+          <span class="review-date">Dec 18, 2023</span>
+        </blockquote>
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">SM</span>
+            <span class="review-who"><strong>Shaggy M.</strong><span>Morton Grove, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;Margaret's salon is pleasant, calm, clean, with easy parking. I
+          struggled to find a place for my hair care. Other salons felt hectic, overpriced,
+          with so-so results. I always leave satisfied.&rdquo;</p>
+          <span class="review-date">Dec 22, 2023</span>
+        </blockquote>
+
+        <blockquote class="review">
+          <div class="review-head">
+            <span class="review-avatar" aria-hidden="true">TG</span>
+            <span class="review-who"><strong>Traci G.</strong><span>Harwood Heights, IL</span></span>
+            <a class="review-source" href="https://www.yelp.com/biz/mw-hair-salon-park-ridge-2" target="_blank" rel="noopener" aria-label="View this review on Yelp">5★ on Yelp</a>
+          </div>
+          <div class="review-stars" aria-label="5 out of 5 stars">
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+            <svg viewBox="0 0 24 24"><path d="M12 2l2.9 6.6 7.1.6-5.4 4.7 1.7 7-6.3-3.9-6.3 3.9 1.7-7L1 9.2l7.1-.6z"/></svg>
+          </div>
+          <p>&ldquo;Margaret has the most fantastic scalp and hair conditioning treatments!
+          After my treatment with her, my scalp felt like it just had a facial.&rdquo;</p>
+          <span class="review-date">Mar 22, 2015</span>
+        </blockquote>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- HOURS & LOCATION -->
+  <section class="location" id="location">
+    <div class="wrap location-grid">
+      <div>
+        <p class="eyebrow">Visit the studio</p>
+        <h2>Hours &amp; Location</h2>
+
+        <table class="hours-table">
+          <tbody>
+            <tr><th scope="row">Monday</th><td>By appointment</td></tr>
+            <tr><th scope="row">Tuesday to Thursday</th><td>9:00 AM to 5:00 PM</td></tr>
+            <tr><th scope="row">Friday</th><td>9:00 AM to 6:00 PM</td></tr>
+            <tr><th scope="row">Saturday</th><td>8:30 AM to 6:00 PM</td></tr>
+            <tr><th scope="row">Sunday</th><td>Closed</td></tr>
+          </tbody>
+        </table>
+
+        <address>
+          Park Ridge Plaza<br>
+          27 S Northwest Hwy<br>
+          Park Ridge, IL 60068
+        </address>
+
+        <a class="btn btn-primary" href="https://www.google.com/maps/place/MW+Hair+Salon/@42.0103267,-87.8299133,17z/data=!4m15!1m8!3m7!1s0x880fc9b124746379:0x51c4a4a25279ad15!2sMW+Hair+Salon!8m2!3d42.0105322!4d-87.828153!10e5!16s%2Fg%2F11bbwqrg39!3m5!1s0x880fc9b124746379:0x51c4a4a25279ad15!8m2!3d42.0105322!4d-87.828153!16s%2Fg%2F11bbwqrg39" target="_blank" rel="noopener">
+          Get Directions
+        </a>
+      </div>
+      <iframe class="map-embed" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2964.4!2d-87.828153!3d42.0105322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x880fc9b124746379%3A0x51c4a4a25279ad15!2sMW%20Hair%20Salon!5e0!3m2!1sen!2sus!4v1720558800000" title="Map to MW Hair Salon, 27 S Northwest Hwy, Park Ridge, IL" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+  </section>
+
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <p class="eyebrow">Get in touch</p>
+        <h2>Ready when you are.</h2>
+        <p class="section-lede">Call, email, or find MW Hair Salon on social. Margaret usually replies quickest by phone.</p>
+      </div>
+      <ul class="contact-list">
+        <li>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">(224) 388-9356</span>
+        </li>
+        <li>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">margaret.MWsalon@gmail.com</span>
+        </li>
+        <li>
+          <span class="contact-label">Instagram</span>
+          <a href="https://www.instagram.com/margaretdolubizno" target="_blank" rel="noopener">@margaretdolubizno</a>
+        </li>
+        <li>
+          <span class="contact-label">Facebook</span>
+          <a href="https://www.facebook.com/MWHairSalon.PR" target="_blank" rel="noopener">MW Hair Salon</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <svg class="footer-mark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 768.8 542.2" role="img" aria-label="MW Hair Salon"><path d="M 129.50 449.00 L 128.75 451.50 L 126.50 453.25 L 125.50 456.25 L 123.25 459.25 L 121.25 463.00 L 121.00 467.00 L 118.75 469.00 L 119.25 474.75 L 118.75 476.25 L 117.00 478.00 L 117.25 481.75 L 116.25 484.25 L 116.75 485.50 L 118.25 487.00 L 118.50 487.75 L 118.25 495.00 L 118.75 496.50 L 119.00 500.25 L 118.75 501.25 L 117.25 502.50 L 117.50 503.50 L 119.25 504.00 L 120.50 505.25 L 123.50 510.00 L 126.25 512.75 L 128.25 513.00 L 129.00 513.50 L 129.25 517.00 L 130.25 518.25 L 134.25 520.75 L 137.75 524.25 L 142.00 525.00 L 145.75 527.25 L 146.50 527.25 L 149.75 528.75 L 151.25 530.00 L 156.25 529.75 L 157.75 530.75 L 159.75 531.25 L 162.75 531.00 L 166.75 531.25 L 167.75 531.75 L 173.00 532.00 L 177.00 531.75 L 181.00 530.50 L 182.75 530.50 L 189.00 527.00 L 191.75 526.00 L 194.00 525.75 L 196.50 523.25 L 198.00 522.50 L 199.75 522.50 L 200.50 521.00 L 204.50 516.75 L 205.75 516.50 L 206.75 517.75 L 206.25 520.00 L 207.25 522.00 L 207.00 529.25 L 207.50 530.00 L 209.00 530.75 L 210.25 530.75 L 212.25 531.50 L 214.50 531.50 L 217.50 529.75 L 219.00 528.25 L 219.50 526.75 L 219.00 521.75 L 219.25 517.25 L 218.75 514.75 L 219.50 513.00 L 219.50 507.75 L 218.25 503.50 L 218.75 501.50 L 218.50 498.00 L 219.00 496.00 L 218.25 494.50 L 217.75 483.50 L 218.75 478.50 L 218.50 474.00 L 218.00 472.00 L 218.25 469.75 L 217.75 468.25 L 218.25 466.25 L 218.25 457.00 L 217.75 455.50 L 218.00 451.50 L 217.25 450.25 L 217.25 449.25 L 218.50 446.50 L 218.50 443.50 L 217.50 437.50 L 216.50 435.75 L 213.00 434.50 L 208.25 434.50 L 207.00 435.25 L 206.75 436.75 L 207.25 437.75 L 207.25 440.50 L 206.00 444.25 L 206.50 448.50 L 206.00 449.50 L 205.00 449.50 L 201.75 446.50 L 199.25 445.00 L 197.75 443.25 L 194.75 442.25 L 191.25 440.00 L 187.25 439.25 L 184.50 437.25 L 181.50 437.25 L 179.25 435.50 L 175.50 435.50 L 173.00 434.50 L 171.00 434.50 L 169.75 435.00 L 164.75 435.00 L 163.25 436.00 L 162.50 436.00 L 161.75 435.25 L 160.50 435.00 L 157.75 436.25 L 155.75 436.25 L 154.25 437.00 L 150.50 437.25 L 148.75 439.00 L 145.25 438.50 L 142.25 440.25 L 139.25 444.00 L 136.00 445.75 L 133.75 448.75 L 132.50 449.00 L 130.50 448.25 Z M 172.00 445.50 L 172.25 445.75 L 174.25 445.75 L 175.00 446.25 L 178.50 446.25 L 178.75 446.50 L 180.25 446.75 L 182.00 448.00 L 184.25 449.00 L 186.25 450.50 L 189.00 451.75 L 191.75 453.75 L 194.00 454.75 L 194.75 455.50 L 195.50 457.25 L 196.00 457.50 L 197.75 457.50 L 198.25 457.75 L 199.00 458.75 L 199.25 460.00 L 200.50 462.00 L 201.25 463.75 L 201.25 466.00 L 201.50 466.50 L 204.00 468.00 L 204.75 469.00 L 204.75 470.00 L 204.00 470.75 L 203.75 472.50 L 205.75 474.75 L 206.25 475.75 L 206.25 478.75 L 206.00 479.00 L 205.75 481.50 L 206.00 481.75 L 206.00 483.50 L 206.25 483.75 L 206.25 486.50 L 206.50 486.75 L 206.50 487.75 L 206.25 488.50 L 204.00 490.50 L 203.00 492.75 L 203.00 494.25 L 203.50 495.25 L 204.75 496.00 L 205.00 496.75 L 203.75 499.75 L 201.75 501.75 L 200.75 504.00 L 199.00 506.00 L 198.00 506.50 L 197.75 507.00 L 195.25 509.25 L 195.00 510.00 L 191.00 514.00 L 190.50 514.25 L 188.50 514.50 L 188.25 514.75 L 187.00 514.75 L 183.25 517.25 L 181.75 517.25 L 181.50 517.50 L 179.75 517.75 L 178.75 518.50 L 177.25 518.75 L 176.25 519.25 L 172.50 519.25 L 172.25 519.00 L 171.00 519.00 L 170.75 518.75 L 169.50 519.25 L 168.75 520.00 L 167.00 520.25 L 166.75 520.00 L 162.25 520.00 L 159.50 519.00 L 156.50 519.00 L 156.25 518.75 L 155.25 518.75 L 154.50 518.25 L 152.50 517.75 L 151.25 517.00 L 149.25 516.75 L 147.00 514.00 L 144.75 513.50 L 142.75 511.25 L 141.75 511.00 L 139.25 509.75 L 138.25 508.75 L 137.75 507.50 L 136.75 506.25 L 134.75 504.25 L 134.25 503.00 L 134.25 501.50 L 134.00 501.00 L 133.00 500.25 L 131.25 500.00 L 130.00 499.00 L 129.75 498.50 L 129.75 496.50 L 129.50 496.25 L 129.25 493.75 L 128.75 492.75 L 128.75 492.00 L 127.75 490.00 L 128.00 488.25 L 128.50 487.75 L 129.00 486.50 L 129.00 485.50 L 128.00 482.50 L 127.75 478.00 L 129.00 474.75 L 129.25 472.75 L 130.00 471.00 L 129.75 468.25 L 131.50 466.25 L 132.00 464.00 L 133.50 462.50 L 135.25 461.75 L 135.75 461.25 L 136.25 460.25 L 136.25 458.75 L 136.50 458.25 L 137.50 457.25 L 138.25 457.00 L 139.25 455.75 L 142.50 452.75 L 146.75 451.50 L 149.00 450.25 L 150.75 450.00 L 151.25 449.50 L 156.00 447.25 L 158.50 447.00 L 160.00 446.25 L 165.50 446.25 L 165.75 446.00 L 167.00 446.00 L 168.50 445.50 Z M 275.75 434.50 L 274.50 434.00 L 267.50 433.25 L 263.00 435.75 L 261.00 435.75 L 258.50 436.75 L 255.00 439.50 L 251.25 439.00 L 247.25 434.50 L 246.00 434.00 L 241.00 434.25 L 238.75 435.75 L 238.25 436.75 L 238.50 441.50 L 239.00 442.25 L 239.00 445.75 L 238.25 447.25 L 238.75 448.50 L 238.25 453.75 L 237.75 454.50 L 238.25 457.75 L 237.50 459.25 L 237.75 460.75 L 237.25 461.75 L 237.25 464.00 L 239.00 468.75 L 238.75 472.50 L 239.25 479.75 L 238.75 481.50 L 240.00 484.00 L 240.00 486.00 L 238.25 489.50 L 238.75 495.75 L 238.50 508.25 L 237.25 509.75 L 236.25 509.00 L 234.75 500.25 L 235.75 488.75 L 234.50 486.00 L 234.75 482.50 L 233.75 480.25 L 234.00 475.25 L 234.75 473.25 L 234.25 467.50 L 235.25 461.75 L 235.25 459.50 L 234.25 456.75 L 234.75 446.25 L 234.00 444.50 L 234.00 438.75 L 233.25 436.25 L 230.00 434.00 L 225.75 434.25 L 222.50 436.75 L 221.75 438.25 L 221.50 441.75 L 223.00 444.75 L 222.75 449.50 L 221.00 452.75 L 221.50 453.50 L 221.25 459.25 L 222.25 461.25 L 223.25 465.25 L 222.75 470.00 L 222.00 472.00 L 223.00 487.50 L 222.00 489.50 L 222.25 492.75 L 220.50 496.50 L 222.50 499.50 L 222.00 501.25 L 222.25 504.25 L 221.50 506.50 L 221.75 509.25 L 221.25 510.25 L 221.50 512.25 L 222.75 514.00 L 222.00 520.00 L 222.00 524.25 L 223.75 528.00 L 224.00 529.50 L 225.00 530.75 L 229.25 531.50 L 232.75 529.75 L 234.25 528.50 L 236.00 524.25 L 236.00 515.75 L 236.25 514.25 L 237.00 513.25 L 237.50 514.00 L 237.25 515.75 L 238.75 517.00 L 239.25 521.50 L 239.00 525.25 L 240.00 528.75 L 241.75 530.25 L 243.50 530.75 L 247.75 530.50 L 251.75 528.25 L 252.25 513.25 L 251.75 512.00 L 252.00 508.25 L 251.50 507.50 L 252.25 501.75 L 252.25 496.25 L 251.25 493.25 L 251.00 486.75 L 251.50 482.50 L 251.25 478.50 L 250.50 476.50 L 250.50 471.25 L 251.25 469.25 L 251.75 462.00 L 253.75 458.50 L 255.50 453.25 L 258.00 451.25 L 260.75 448.00 L 265.75 445.50 L 268.75 445.25 L 270.50 444.50 L 272.25 444.50 L 273.50 445.25 L 275.25 444.75 L 276.75 441.50 L 276.50 438.00 L 277.00 437.00 L 277.00 436.00 Z M 337.50 438.75 L 332.25 447.00 L 329.50 448.25 L 328.50 453.00 L 327.00 455.25 L 327.00 460.75 L 328.50 462.75 L 327.75 466.00 L 329.50 468.50 L 331.50 474.25 L 334.75 478.75 L 339.00 482.50 L 351.00 488.00 L 357.25 487.75 L 362.00 488.50 L 369.25 488.50 L 370.50 487.75 L 374.25 487.50 L 377.00 488.25 L 393.00 487.50 L 394.75 488.25 L 401.50 488.50 L 404.25 491.25 L 407.50 492.75 L 409.00 494.75 L 410.00 497.25 L 409.50 504.50 L 410.75 505.75 L 410.25 509.25 L 403.00 516.25 L 394.75 518.25 L 373.25 517.75 L 354.25 518.50 L 335.50 518.25 L 329.75 519.00 L 328.75 520.25 L 328.00 523.50 L 328.25 527.25 L 330.25 529.25 L 334.50 530.75 L 342.00 530.00 L 350.50 530.50 L 357.25 529.75 L 364.25 529.75 L 367.25 530.50 L 376.75 529.75 L 386.00 530.50 L 389.00 529.75 L 398.00 529.50 L 400.50 528.50 L 403.25 528.75 L 414.25 523.50 L 419.75 517.75 L 421.50 513.50 L 423.00 511.50 L 422.75 501.75 L 423.50 498.00 L 422.00 496.00 L 421.25 492.75 L 419.25 490.50 L 418.25 488.00 L 412.50 481.50 L 403.00 477.00 L 401.00 477.25 L 397.25 476.00 L 388.00 476.00 L 387.00 476.50 L 373.75 476.00 L 368.25 477.00 L 365.25 476.25 L 353.50 476.00 L 349.50 473.00 L 347.25 472.50 L 344.00 470.25 L 340.25 462.25 L 340.25 458.00 L 343.00 453.50 L 343.00 451.00 L 349.75 445.25 L 352.50 444.50 L 360.00 445.25 L 362.75 444.25 L 366.00 444.00 L 378.00 444.75 L 380.25 444.00 L 388.00 443.75 L 390.25 445.00 L 395.75 445.00 L 398.75 444.00 L 405.50 444.25 L 408.25 445.00 L 414.00 444.75 L 416.50 443.50 L 419.25 443.50 L 421.25 441.50 L 421.00 433.75 L 418.75 433.75 L 416.75 432.75 L 412.00 433.00 L 411.00 432.50 L 402.75 432.50 L 401.00 433.00 L 395.00 432.50 L 383.75 432.50 L 382.75 433.00 L 367.50 432.50 L 362.00 433.00 L 355.00 432.25 L 350.25 434.00 L 347.50 434.00 Z M 585.75 432.25 L 581.50 434.25 L 578.25 434.75 L 576.00 435.75 L 574.50 436.75 L 572.50 437.50 L 569.00 440.25 L 565.75 442.00 L 557.50 450.50 L 557.25 451.25 L 556.00 452.50 L 555.00 453.00 L 554.75 454.75 L 553.00 457.00 L 552.75 459.25 L 552.00 460.75 L 552.00 462.50 L 549.75 468.25 L 549.25 472.50 L 548.50 474.00 L 548.50 477.00 L 548.00 477.75 L 548.00 479.75 L 547.75 480.00 L 549.25 482.75 L 549.75 484.50 L 549.75 488.50 L 550.00 488.75 L 549.50 490.00 L 549.50 491.50 L 551.00 493.50 L 552.00 496.25 L 555.00 501.50 L 556.25 505.50 L 558.75 507.75 L 559.00 510.00 L 562.00 512.25 L 566.75 517.50 L 571.00 519.75 L 572.75 520.25 L 575.50 522.25 L 579.75 524.50 L 583.25 526.00 L 585.75 526.25 L 588.25 527.75 L 594.25 528.00 L 596.75 528.50 L 598.00 528.50 L 599.75 528.00 L 601.00 528.25 L 604.00 528.25 L 604.25 528.00 L 609.75 528.25 L 613.50 526.75 L 615.25 526.75 L 616.50 526.25 L 619.75 525.75 L 622.50 524.25 L 624.50 524.25 L 628.50 522.00 L 632.50 520.75 L 633.50 519.75 L 634.25 517.75 L 635.00 517.00 L 637.25 516.00 L 642.25 510.50 L 644.00 509.50 L 644.75 506.50 L 648.50 499.50 L 648.50 497.25 L 649.25 495.75 L 649.25 494.75 L 650.75 491.50 L 650.50 483.75 L 651.00 481.25 L 652.00 479.50 L 652.00 478.00 L 651.00 474.75 L 651.00 472.75 L 650.25 471.25 L 650.50 466.50 L 650.25 465.75 L 648.75 464.00 L 645.75 456.75 L 641.25 452.25 L 640.75 451.25 L 640.75 450.50 L 639.00 447.75 L 637.00 445.75 L 635.00 444.50 L 633.50 443.00 L 632.75 441.25 L 631.75 440.25 L 628.75 440.00 L 627.50 439.00 L 621.75 436.25 L 619.25 435.50 L 618.25 435.50 L 614.75 433.75 L 612.00 433.50 L 609.75 432.75 L 607.50 432.75 L 605.25 431.50 L 602.00 431.50 L 601.75 431.75 L 595.75 431.50 L 595.50 431.75 L 592.75 431.75 L 592.50 432.00 L 590.00 432.00 L 589.75 432.25 Z M 591.25 443.50 L 592.50 443.50 L 592.75 443.25 L 595.75 443.25 L 596.00 443.00 L 598.25 443.00 L 598.50 443.25 L 601.00 443.00 L 601.25 443.25 L 602.25 443.25 L 602.50 443.50 L 608.75 443.75 L 611.50 445.25 L 612.50 445.50 L 613.50 446.25 L 614.00 446.25 L 615.75 447.00 L 616.50 447.75 L 618.25 448.50 L 619.50 449.50 L 626.75 453.25 L 628.50 455.25 L 630.50 456.75 L 632.25 460.75 L 632.75 461.25 L 633.50 463.00 L 634.50 464.25 L 635.00 466.00 L 635.75 467.00 L 637.25 470.00 L 637.25 471.25 L 637.00 471.50 L 637.00 472.50 L 636.75 472.75 L 637.25 475.25 L 636.75 476.25 L 636.75 477.50 L 637.25 478.50 L 638.50 480.00 L 638.25 484.50 L 637.75 485.25 L 637.75 486.00 L 637.50 486.25 L 637.50 488.25 L 637.00 489.50 L 637.00 492.25 L 634.50 497.25 L 633.75 498.00 L 632.50 500.50 L 631.25 501.75 L 630.25 504.00 L 628.00 506.50 L 627.25 506.75 L 625.00 508.50 L 623.25 509.25 L 621.50 510.50 L 618.50 512.00 L 617.75 512.00 L 615.50 513.25 L 615.00 513.25 L 613.25 514.50 L 610.75 515.50 L 610.00 515.50 L 609.75 515.75 L 606.25 515.50 L 605.00 516.00 L 602.75 516.00 L 600.75 516.75 L 595.00 516.75 L 594.75 516.50 L 592.25 516.00 L 589.00 514.25 L 586.75 514.50 L 584.50 513.50 L 581.75 511.50 L 580.75 511.00 L 580.25 511.00 L 578.75 510.00 L 577.50 509.50 L 575.50 507.50 L 574.00 506.50 L 571.75 504.25 L 571.75 504.00 L 571.00 503.50 L 570.00 501.50 L 567.00 498.75 L 566.25 497.00 L 566.00 495.50 L 563.50 491.75 L 563.25 490.75 L 561.75 488.00 L 561.75 487.25 L 561.50 487.00 L 561.50 483.00 L 561.75 482.75 L 561.75 475.25 L 562.75 473.00 L 562.50 470.25 L 562.75 470.00 L 563.50 467.25 L 564.00 466.50 L 564.25 465.00 L 565.50 462.25 L 566.75 460.75 L 567.25 459.50 L 569.75 457.00 L 570.25 456.00 L 570.25 455.00 L 570.50 454.50 L 572.00 453.50 L 573.75 453.25 L 574.75 452.75 L 576.25 451.25 L 576.75 450.25 L 576.75 449.75 L 578.25 448.25 L 579.25 447.75 L 579.75 447.75 L 581.00 447.00 L 581.50 447.00 L 583.25 446.25 L 584.00 446.25 L 586.25 445.25 L 589.25 444.75 L 589.75 444.25 Z M 655.25 432.50 L 653.25 435.75 L 652.50 446.50 L 654.25 449.25 L 653.75 461.00 L 654.00 464.75 L 655.00 466.75 L 655.00 473.25 L 653.75 478.25 L 654.50 482.50 L 655.25 484.00 L 655.00 487.25 L 655.50 491.75 L 654.75 493.50 L 654.75 495.50 L 655.25 496.25 L 655.00 499.50 L 655.75 501.00 L 656.00 510.75 L 655.50 513.00 L 656.25 514.25 L 657.00 522.50 L 656.75 525.25 L 657.50 526.50 L 660.25 527.75 L 664.50 528.25 L 665.75 527.75 L 669.50 523.50 L 669.50 511.00 L 668.75 509.25 L 669.00 502.00 L 667.75 494.50 L 667.75 486.00 L 668.25 483.50 L 667.50 481.25 L 668.00 468.25 L 670.25 463.25 L 673.75 457.50 L 676.00 455.25 L 677.25 452.50 L 680.00 450.50 L 685.25 448.25 L 687.00 447.00 L 691.00 445.75 L 692.75 444.00 L 694.75 443.00 L 697.50 442.50 L 712.00 442.75 L 715.25 444.50 L 720.50 445.00 L 725.50 448.50 L 731.50 451.25 L 733.50 454.50 L 737.50 458.00 L 739.50 461.25 L 741.25 465.50 L 743.00 467.75 L 743.25 477.00 L 743.75 478.50 L 743.50 483.75 L 744.50 485.50 L 743.50 497.50 L 744.00 500.50 L 745.25 502.25 L 745.50 510.75 L 744.50 513.50 L 744.50 515.50 L 745.75 519.25 L 745.75 521.50 L 747.75 525.75 L 749.75 527.50 L 752.00 527.75 L 756.00 527.25 L 758.00 526.00 L 760.75 521.50 L 760.75 517.50 L 759.00 512.25 L 759.75 506.50 L 759.75 497.25 L 759.00 495.75 L 759.50 490.75 L 758.75 489.25 L 758.75 485.50 L 757.50 481.25 L 757.00 472.25 L 756.25 468.75 L 756.50 464.00 L 755.25 461.25 L 753.50 459.50 L 752.50 457.00 L 750.50 454.50 L 747.50 448.50 L 740.50 441.75 L 731.25 436.25 L 727.50 435.50 L 724.25 434.00 L 723.25 433.00 L 721.00 432.75 L 718.00 431.25 L 712.75 431.00 L 711.00 431.50 L 706.75 430.50 L 700.25 430.50 L 698.25 431.25 L 695.25 431.00 L 690.00 433.00 L 685.50 433.25 L 682.75 435.00 L 673.00 439.50 L 669.50 442.50 L 666.75 443.75 L 666.25 443.00 L 666.25 434.25 L 665.00 432.25 L 657.75 430.50 Z M 12.25 404.75 L 11.75 405.50 L 12.00 408.75 L 10.50 411.25 L 10.75 417.25 L 11.50 420.00 L 10.25 422.25 L 11.25 427.00 L 10.00 430.75 L 12.25 436.75 L 11.50 440.25 L 11.50 455.00 L 10.25 457.00 L 10.75 467.00 L 11.75 471.25 L 10.50 473.50 L 10.50 477.25 L 11.25 479.50 L 9.00 482.50 L 10.00 490.00 L 8.00 494.00 L 8.00 495.50 L 9.75 497.75 L 10.25 501.50 L 9.25 507.50 L 9.75 508.75 L 9.50 511.25 L 10.25 513.00 L 10.00 516.50 L 12.50 520.25 L 12.25 521.50 L 10.50 523.25 L 11.00 531.00 L 14.00 531.50 L 16.50 532.75 L 20.25 530.75 L 22.75 527.50 L 19.75 516.75 L 19.50 512.50 L 20.00 510.75 L 21.75 510.75 L 22.50 509.75 L 21.50 506.00 L 22.00 503.75 L 20.00 499.50 L 20.50 497.50 L 21.75 496.25 L 21.50 494.25 L 22.00 493.25 L 21.00 490.75 L 21.00 484.50 L 20.25 481.75 L 22.00 478.50 L 22.25 471.00 L 24.50 469.00 L 27.25 461.50 L 30.50 458.75 L 30.75 457.00 L 32.00 455.50 L 37.50 452.75 L 39.75 450.00 L 43.25 448.25 L 44.25 448.25 L 46.00 449.50 L 51.75 446.50 L 56.50 445.75 L 63.25 446.75 L 65.00 445.25 L 67.00 445.00 L 71.25 447.75 L 78.50 448.00 L 80.00 449.25 L 80.00 451.25 L 83.00 452.00 L 86.50 454.50 L 90.50 455.25 L 91.50 456.50 L 91.75 459.25 L 94.00 460.50 L 95.25 462.00 L 95.00 463.25 L 98.25 465.75 L 98.75 470.50 L 96.50 473.00 L 100.50 475.75 L 103.00 480.25 L 102.25 486.75 L 102.50 490.00 L 101.00 492.25 L 102.50 494.75 L 102.50 496.00 L 101.00 498.75 L 102.00 501.50 L 100.50 504.50 L 100.50 507.00 L 101.50 510.25 L 100.00 512.50 L 100.75 515.50 L 99.00 517.75 L 99.25 520.00 L 100.75 522.25 L 100.75 523.50 L 99.25 524.75 L 99.25 525.50 L 101.50 527.25 L 101.25 530.00 L 104.50 534.00 L 107.00 534.00 L 111.00 531.50 L 112.50 529.25 L 111.75 522.00 L 112.75 519.50 L 111.75 517.75 L 111.75 516.00 L 113.50 514.00 L 112.00 511.00 L 112.50 503.75 L 114.25 502.50 L 114.25 502.00 L 112.25 501.25 L 110.50 496.00 L 111.50 489.75 L 111.25 480.75 L 110.25 478.50 L 111.00 475.75 L 111.00 472.25 L 110.25 471.00 L 110.00 468.00 L 106.25 462.75 L 105.25 458.25 L 102.00 453.00 L 97.75 450.50 L 91.50 444.00 L 89.50 443.75 L 84.00 441.00 L 81.50 440.75 L 79.75 439.25 L 76.50 438.75 L 73.00 437.25 L 62.00 437.50 L 59.50 436.25 L 55.00 438.25 L 55.00 440.50 L 53.25 438.25 L 50.25 437.75 L 45.00 440.25 L 42.00 439.75 L 38.75 441.00 L 36.00 443.75 L 29.75 446.25 L 29.00 447.75 L 27.00 449.00 L 24.50 452.25 L 20.25 452.50 L 19.75 450.50 L 20.75 448.75 L 20.00 445.75 L 20.50 442.00 L 19.50 437.25 L 19.00 428.50 L 20.50 426.50 L 20.50 424.00 L 19.50 421.25 L 18.75 410.75 L 20.25 409.00 L 20.50 407.50 L 19.75 405.50 L 18.50 404.25 Z M 223.00 401.00 L 222.00 402.00 L 222.00 402.25 L 221.75 402.50 L 221.75 405.00 L 221.50 405.25 L 221.50 406.25 L 221.25 406.50 L 221.25 406.75 L 221.50 407.00 L 221.50 408.00 L 221.75 408.25 L 221.75 409.50 L 222.00 409.75 L 222.00 411.00 L 222.25 411.25 L 222.25 411.75 L 222.50 412.00 L 222.50 414.50 L 222.25 414.75 L 222.25 416.25 L 222.50 416.50 L 222.50 416.75 L 222.75 417.00 L 222.75 417.25 L 223.00 417.50 L 223.00 417.75 L 225.00 419.75 L 225.50 419.75 L 225.75 420.00 L 227.25 420.00 L 227.50 419.75 L 230.75 419.75 L 231.00 419.50 L 231.25 419.50 L 231.50 419.25 L 231.75 419.25 L 232.00 419.00 L 232.25 419.00 L 233.00 418.25 L 233.00 418.00 L 233.25 417.75 L 233.25 417.00 L 233.50 416.75 L 233.50 416.50 L 233.25 416.25 L 233.25 413.50 L 233.50 413.25 L 233.50 412.50 L 233.75 412.25 L 233.75 410.50 L 233.50 410.25 L 233.50 406.75 L 233.75 406.50 L 233.75 403.75 L 233.50 403.50 L 233.50 403.25 L 233.25 403.00 L 233.25 402.75 L 233.00 402.50 L 233.00 402.25 L 232.00 401.25 L 231.75 401.25 L 231.50 401.00 L 229.50 401.00 L 229.25 401.25 L 226.75 401.25 L 226.50 401.00 L 226.00 401.00 L 225.75 400.75 L 223.75 400.75 L 223.50 401.00 Z M 541.00 399.25 L 539.25 398.50 L 533.25 398.50 L 530.25 400.75 L 529.75 408.25 L 531.00 409.75 L 530.50 412.50 L 531.25 414.75 L 530.25 416.75 L 530.50 420.25 L 529.75 425.75 L 531.25 427.00 L 531.00 441.75 L 529.50 443.00 L 529.50 444.00 L 531.75 445.25 L 531.25 447.25 L 531.50 452.75 L 530.75 455.75 L 531.00 459.00 L 530.50 459.50 L 529.00 459.00 L 529.25 454.00 L 527.75 451.00 L 527.25 448.25 L 527.25 437.25 L 527.75 435.50 L 527.00 434.00 L 525.00 432.50 L 519.00 432.25 L 514.25 434.25 L 514.00 435.75 L 515.00 437.50 L 515.50 442.25 L 515.25 444.75 L 514.25 445.75 L 509.00 441.50 L 495.00 435.00 L 490.50 434.50 L 488.00 432.50 L 484.00 433.00 L 474.25 432.25 L 469.00 432.50 L 466.50 433.50 L 463.00 433.25 L 457.50 436.25 L 455.25 436.50 L 446.50 440.75 L 440.75 445.75 L 437.25 449.75 L 435.25 450.75 L 432.75 456.50 L 430.00 460.75 L 429.50 462.50 L 430.00 464.75 L 426.50 470.75 L 427.25 474.00 L 426.25 482.75 L 426.75 487.75 L 428.00 490.00 L 428.50 496.25 L 430.50 498.75 L 431.00 501.25 L 435.25 508.25 L 438.75 512.75 L 441.00 513.75 L 446.00 518.75 L 449.50 521.25 L 463.50 527.75 L 466.75 527.50 L 470.00 528.50 L 482.00 528.50 L 483.50 529.00 L 493.75 528.00 L 503.00 524.00 L 515.00 516.75 L 516.50 518.25 L 516.25 521.00 L 517.75 525.50 L 519.25 527.25 L 522.25 528.75 L 527.75 528.25 L 530.25 525.25 L 529.75 515.75 L 530.25 506.75 L 530.00 500.00 L 529.25 497.50 L 529.50 491.75 L 528.50 481.25 L 528.75 470.75 L 528.00 463.75 L 528.25 462.50 L 530.00 461.75 L 532.25 463.00 L 531.75 475.25 L 530.00 478.75 L 530.50 479.75 L 532.00 479.75 L 533.00 481.25 L 532.50 488.75 L 530.75 490.50 L 532.50 492.75 L 531.50 494.00 L 531.25 496.50 L 533.00 498.75 L 533.25 507.25 L 532.75 509.75 L 534.25 511.25 L 533.50 514.25 L 533.75 525.50 L 534.50 526.50 L 538.75 528.50 L 543.25 528.50 L 544.50 527.75 L 546.25 525.50 L 547.00 516.50 L 546.25 508.50 L 545.50 507.00 L 546.25 505.00 L 546.75 498.00 L 545.75 496.25 L 545.25 488.75 L 546.25 485.75 L 546.25 481.00 L 545.00 478.50 L 545.75 466.50 L 544.00 461.25 L 544.00 458.75 L 545.25 454.25 L 544.50 446.50 L 543.25 443.75 L 544.75 435.75 L 542.75 430.75 L 543.00 425.50 L 544.00 422.75 L 543.00 416.75 L 543.75 403.00 L 543.25 401.50 Z M 470.25 444.25 L 479.50 444.00 L 479.75 444.25 L 483.00 444.25 L 484.75 445.25 L 488.50 445.25 L 489.50 445.75 L 491.25 446.00 L 492.50 447.00 L 494.25 447.75 L 494.75 448.25 L 496.25 449.00 L 496.75 449.00 L 499.00 450.25 L 500.25 450.50 L 501.50 451.25 L 502.50 451.50 L 503.50 452.50 L 504.25 454.50 L 507.00 457.00 L 508.00 459.25 L 508.75 460.00 L 509.75 460.25 L 510.50 460.75 L 511.00 463.00 L 511.75 464.00 L 515.25 471.00 L 515.25 471.50 L 515.75 472.50 L 515.75 473.25 L 516.00 473.50 L 516.00 476.50 L 515.75 476.75 L 515.75 477.25 L 516.00 477.50 L 516.00 481.25 L 515.75 481.50 L 515.75 482.75 L 515.50 483.00 L 515.50 484.00 L 515.00 485.25 L 514.75 488.75 L 514.25 490.00 L 513.25 491.25 L 513.00 493.00 L 512.75 493.25 L 512.75 495.00 L 512.50 495.25 L 512.25 496.50 L 511.50 497.75 L 511.25 499.00 L 509.25 503.00 L 503.75 508.25 L 501.50 509.50 L 500.25 510.75 L 499.25 511.25 L 497.75 512.50 L 495.75 513.50 L 495.25 513.50 L 493.50 514.25 L 492.00 514.25 L 491.75 514.50 L 490.00 514.75 L 488.75 515.75 L 487.00 516.50 L 485.75 516.50 L 485.50 516.75 L 481.75 516.75 L 479.75 517.50 L 475.75 517.50 L 475.50 517.25 L 473.75 517.25 L 472.75 516.75 L 470.25 516.50 L 469.00 515.75 L 468.25 515.75 L 467.50 515.25 L 467.00 515.25 L 466.00 514.75 L 465.25 514.75 L 465.00 514.50 L 462.50 514.00 L 460.50 512.75 L 458.50 512.25 L 456.50 511.25 L 454.00 508.75 L 451.75 507.50 L 444.75 500.25 L 444.25 499.25 L 444.25 498.75 L 443.00 496.75 L 443.00 496.00 L 441.25 492.75 L 441.25 492.25 L 441.00 492.00 L 441.00 489.25 L 440.75 489.00 L 440.75 488.50 L 440.00 487.75 L 439.25 486.25 L 439.25 485.50 L 439.50 485.25 L 439.25 481.50 L 439.50 481.25 L 439.50 479.75 L 439.75 479.50 L 439.50 473.75 L 439.75 473.50 L 439.75 472.75 L 441.00 470.75 L 441.00 470.00 L 441.25 469.75 L 441.25 467.50 L 444.00 461.75 L 444.00 460.00 L 444.25 459.50 L 446.75 457.25 L 448.25 456.50 L 449.00 455.75 L 449.50 454.75 L 452.25 451.75 L 453.25 451.25 L 453.75 451.25 L 455.75 450.00 L 456.75 449.75 L 458.25 448.50 L 460.25 448.25 L 461.25 447.75 L 462.50 446.50 L 465.00 446.00 L 465.25 445.75 L 466.00 445.75 L 466.25 445.50 L 468.50 445.50 Z M 192.25 22.25 L 176.25 38.75 L 172.25 57.75 L 168.25 59.75 L 170.50 62.25 L 167.75 71.00 L 169.75 97.50 L 167.75 102.25 L 171.75 177.75 L 168.25 189.75 L 173.50 194.75 L 188.25 193.50 L 185.50 73.25 L 189.25 56.75 L 200.50 40.00 L 212.25 31.25 L 227.25 26.75 L 245.50 27.50 L 256.00 32.50 L 257.50 188.75 L 262.75 194.25 L 272.25 194.75 L 276.00 191.50 L 273.25 33.50 L 280.50 27.75 L 299.00 26.25 L 318.00 32.75 L 333.00 46.50 L 342.00 68.00 L 346.00 322.00 L 350.50 340.00 L 359.50 355.50 L 376.50 369.00 L 404.00 379.75 L 417.25 380.00 L 442.75 373.00 L 470.25 379.25 L 491.50 377.50 L 518.75 362.25 L 530.50 348.50 L 539.25 319.75 L 539.00 254.25 L 535.25 189.75 L 523.00 188.00 L 518.00 191.25 L 522.25 317.25 L 518.75 331.75 L 498.75 354.25 L 477.25 361.00 L 457.50 357.50 L 452.00 351.50 L 448.50 193.50 L 443.00 188.50 L 430.25 190.50 L 433.25 355.00 L 419.00 361.50 L 396.00 358.00 L 384.50 351.25 L 373.25 340.00 L 363.75 314.50 L 364.75 271.50 L 362.75 266.00 L 363.50 210.00 L 361.25 185.25 L 365.00 181.50 L 360.50 172.25 L 360.00 64.25 L 350.50 38.75 L 341.00 26.50 L 319.75 12.25 L 299.25 8.25 L 279.50 9.25 L 264.00 15.00 L 245.00 9.00 L 219.25 9.25 L 209.25 11.75 Z" fill="currentColor" fill-rule="evenodd"/></svg>
+    <nav aria-label="Footer">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Hours &amp; Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <p class="footer-fine">27 S Northwest Hwy, Park Ridge, IL 60068 · (224) 388-9356</p>
+    <p class="footer-fine">&copy; <span id="year"></span> MW Hair Salon. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const navToggle = document.getElementById('navToggle');
+const mainNav = document.getElementById('main-nav');
+
+navToggle.addEventListener('click', () => {
+  const isOpen = mainNav.classList.toggle('is-open');
+  navToggle.setAttribute('aria-expanded', String(isOpen));
+});
+
+mainNav.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    mainNav.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+if (!prefersReducedMotion && 'IntersectionObserver' in window) {
+  const revealTargets = document.querySelectorAll('.service-group, .review, .about-media, .hero-media');
+  revealTargets.forEach((el) => el.classList.add('reveal'));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('reveal-in');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  revealTargets.forEach((el) => observer.observe(el));
+}
+
+/* ---------- typewriter hero headline (type once onto fixed lines, no reflow) ---------- */
+(function () {
+  const h1 = document.querySelector('.typed-h1');
+  if (!h1) return;
+  const live = h1.querySelector('.typed-live');
+  const ghost = h1.querySelector('.typed-ghost');
+  if (!live || !ghost) return;
+  const full = ghost.textContent.replace('|', '').trim();
+  const TYPE_MS = 115;
+
+  const addCursor = (el) => {
+    const c = document.createElement('span');
+    c.className = 'typed-cursor';
+    c.textContent = '|';
+    el.appendChild(c);
+    return c;
+  };
+  const buildLineBlocks = (parent, lines, fill) => {
+    parent.textContent = '';
+    return lines.map((ln) => {
+      const s = document.createElement('span');
+      s.className = 'tline';
+      if (fill) s.textContent = ln;
+      parent.appendChild(s);
+      return s;
+    });
+  };
+
+  function run() {
+    // Measure how the headline naturally wraps at the current width/font,
+    // then lock those breaks so nothing reflows while typing.
+    const wordArr = full.split(' ');
+    ghost.textContent = '';
+    const measured = wordArr.map((w, idx) => {
+      const s = document.createElement('span');
+      s.textContent = w;
+      s.style.whiteSpace = 'nowrap';
+      ghost.appendChild(s);
+      if (idx < wordArr.length - 1) ghost.appendChild(document.createTextNode(' '));
+      return s;
+    });
+    const lines = [];
+    let curTop = null, cur = [];
+    measured.forEach((s) => {
+      const top = s.offsetTop;
+      if (curTop === null) { curTop = top; cur = [s.textContent]; }
+      else if (Math.abs(top - curTop) < 4) { cur.push(s.textContent); }
+      else { lines.push(cur.join(' ')); cur = [s.textContent]; curTop = top; }
+    });
+    if (cur.length) lines.push(cur.join(' '));
+
+    // Rebuild ghost (reserves full box) and live (fixed empty lines to type into).
+    const ghostLines = buildLineBlocks(ghost, lines, true);
+    addCursor(ghostLines[ghostLines.length - 1]);
+    const liveLines = buildLineBlocks(live, lines, false);
+
+    if (prefersReducedMotion) {
+      liveLines.forEach((el, k) => { el.textContent = lines[k]; });
+      addCursor(liveLines[liveLines.length - 1]);
+      return;
+    }
+
+    const cursor = addCursor(liveLines[0]);
+    let li = 0, ci = 0;
+    function type() {
+      const target = lines[li];
+      if (ci < target.length) {
+        ci += 1;
+        liveLines[li].textContent = target.slice(0, ci);
+        liveLines[li].appendChild(cursor);
+        setTimeout(type, TYPE_MS);
+      } else if (li < lines.length - 1) {
+        li += 1; ci = 0;
+        liveLines[li].appendChild(cursor);
+        setTimeout(type, TYPE_MS);
+      }
+      // done: text stays; cursor keeps blinking via CSS
+    }
+    setTimeout(type, 500);
+  }
+
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(run);
+  else run();
+})();
+
+/* ---------- marquee ribbons: fill wide enough to loop seamlessly on any screen ---------- */
+(function () {
+  document.querySelectorAll('.marquee').forEach((m) => {
+    const track = m.querySelector('.marquee-track');
+    const phrase = m.dataset.phrase || '';
+    if (!track || !phrase) return;
+    const rebuild = () => {
+      track.innerHTML = '';
+      const half = document.createElement('div');
+      half.className = 'marquee-group';
+      track.appendChild(half); // attach first so width is measurable
+      // overfill so one half always exceeds the widest realistic screen
+      const need = Math.max(window.innerWidth * 1.4, 3600);
+      let guard = 0;
+      while (half.getBoundingClientRect().width < need && guard < 120) {
+        const word = document.createElement('span');
+        word.textContent = phrase;
+        const dot = document.createElement('span');
+        dot.className = 'dot';
+        dot.textContent = '·';
+        half.appendChild(word); half.appendChild(dot);
+        guard += 1;
+      }
+      track.appendChild(half.cloneNode(true)); // two identical halves -> -50% loops seamlessly
+    };
+    rebuild();
+    let rt;
+    window.addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(rebuild, 250); }, { passive: true });
+  });
+})();
+
+/* ---------- Interactive bento gallery ---------- */
+(function () {
+  const grid = document.getElementById('bentoGrid');
+  const modal = document.getElementById('bentoModal');
+  if (!grid || !modal) return;
+
+  const stageImg = document.getElementById('bentoStageImg');
+  const dock = document.getElementById('bentoDock');
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let tiles = Array.from(grid.querySelectorAll('.bento-tile'));
+  let currentIndex = 0;
+  let lastFocused = null;
+
+  const dataFor = (tile) => {
+    const img = tile.querySelector('img');
+    return { src: img.currentSrc || img.src, alt: img.alt || '' };
+  };
+
+  // Entrance stagger
+  if (!reduce && 'IntersectionObserver' in window) {
+    tiles.forEach((t) => t.classList.add('reveal-tile'));
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          const i = tiles.indexOf(e.target);
+          setTimeout(() => e.target.classList.add('in'), Math.max(0, i) * 70);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    tiles.forEach((t) => io.observe(t));
+  }
+
+  // Crossfade via a temporary class that can never leave the image stuck invisible.
+  stageImg.style.opacity = '1';
+
+  function buildDock() {
+    dock.innerHTML = '';
+    tiles.forEach((tile, i) => {
+      const d = dataFor(tile);
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'bento-dock-thumb';
+      b.setAttribute('aria-label', d.alt || ('Photo ' + (i + 1)));
+      const im = document.createElement('img');
+      im.src = d.src; im.alt = '';
+      b.appendChild(im);
+      b.addEventListener('click', (e) => { e.stopPropagation(); showItem(i); });
+      dock.appendChild(b);
+    });
+  }
+  function markDock() {
+    Array.from(dock.children).forEach((c, i) => c.classList.toggle('active', i === currentIndex));
+  }
+  function showItem(i) {
+    currentIndex = i;
+    const d = dataFor(tiles[i]);
+    stageImg.src = d.src; stageImg.alt = d.alt;
+    stageImg.style.opacity = '1';
+    if (!reduce) {
+      // gentle fade-in on the new image; guaranteed to settle at full opacity
+      stageImg.classList.remove('fade-in');
+      void stageImg.offsetWidth;
+      stageImg.classList.add('fade-in');
+    }
+    markDock();
+  }
+  function openModal(i) {
+    lastFocused = document.activeElement;
+    buildDock();
+    showItem(i);
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    dockPos = { x: 0, y: 0 };
+    dock.style.transform = 'translateX(-50%)';
+    document.addEventListener('keydown', onKey);
+    setTimeout(() => modal.querySelector('.bento-modal-close').focus(), 30);
+  }
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    document.removeEventListener('keydown', onKey);
+    if (lastFocused && lastFocused.focus) lastFocused.focus();
+  }
+  function onKey(e) {
+    if (e.key === 'Escape') closeModal();
+    else if (e.key === 'ArrowRight') showItem((currentIndex + 1) % tiles.length);
+    else if (e.key === 'ArrowLeft') showItem((currentIndex - 1 + tiles.length) % tiles.length);
+  }
+  modal.querySelectorAll('[data-close]').forEach((el) => el.addEventListener('click', closeModal));
+  document.getElementById('bentoPrev').addEventListener('click', () => showItem((currentIndex - 1 + tiles.length) % tiles.length));
+  document.getElementById('bentoNext').addEventListener('click', () => showItem((currentIndex + 1) % tiles.length));
+
+  // Draggable dock
+  let dockPos = { x: 0, y: 0 };
+  (function () {
+    let sx, sy, start, dragging = false;
+    dock.addEventListener('pointerdown', (e) => {
+      sx = e.clientX; sy = e.clientY; start = { x: dockPos.x, y: dockPos.y }; dragging = false;
+    });
+    dock.addEventListener('pointermove', (e) => {
+      if (sx === undefined) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (!dragging && Math.hypot(dx, dy) > 6) { dragging = true; dock.classList.add('is-grabbing'); try { dock.setPointerCapture(e.pointerId); } catch (_) {} }
+      if (dragging) {
+        dockPos = { x: start.x + dx, y: start.y + dy };
+        dock.style.transform = 'translateX(-50%) translate(' + dockPos.x + 'px,' + dockPos.y + 'px)';
+      }
+    });
+    const end = () => {
+      if (sx === undefined) return;
+      if (dragging) {
+        const swallow = (ev) => { ev.stopPropagation(); ev.preventDefault(); };
+        dock.addEventListener('click', swallow, true);
+        setTimeout(() => dock.removeEventListener('click', swallow, true), 0);
+      }
+      dock.classList.remove('is-grabbing');
+      sx = sy = undefined; dragging = false;
+    };
+    dock.addEventListener('pointerup', end);
+    dock.addEventListener('pointercancel', end);
+  })();
+
+  // Tile drag, tuned for smoothness and stability: the held photo follows the
+  // pointer on a gentle lerp (slight spring lag), neighbours glide to their new
+  // slots (FLIP) instead of teleporting, a deliberate 16px pull is needed to
+  // start a drag, and swap cooldown + partner lock stop rapid ping-pong swaps.
+  const DRAG_START = 16;
+  const SWAP_SPACING = 24;
+  const SWAP_COOLDOWN_MS = 250;
+  const PARTNER_RELOCK_PX = 80;
+
+  function flipReorder(mutate, skipTile) {
+    const before = new Map(tiles.map((t) => [t, t.getBoundingClientRect()]));
+    mutate();
+    tiles.forEach((t) => grid.appendChild(t));
+    if (reduce) return;
+    tiles.forEach((t) => {
+      if (t === skipTile) return;
+      const a = before.get(t), b = t.getBoundingClientRect();
+      const fx = a.left - b.left, fy = a.top - b.top;
+      if (!fx && !fy) return;
+      t.style.transition = 'none';
+      t.style.transform = 'translate(' + fx + 'px,' + fy + 'px)';
+      const go = () => {
+        t.style.transition = 'transform 340ms cubic-bezier(0.22, 0.9, 0.3, 1)';
+        t.style.transform = '';
+      };
+      requestAnimationFrame(go);
+      setTimeout(go, 40);
+      setTimeout(() => { t.style.transition = ''; }, 430);
+    });
+  }
+
+  function attachTile(tile) {
+    let sx, sy, startOffL, startOffT, moved = false, dragging = false;
+    let lastSwapX = 0, lastSwapY = 0, lastSwapTime = 0, lastPartner = null;
+    let txv = 0, tyv = 0, cxv = 0, cyv = 0, csv = 1, raf = null, lastFrame = 0;
+
+    const paint = () => {
+      tile.style.transform = 'translate(' + cxv.toFixed(2) + 'px,' + cyv.toFixed(2) + 'px) scale(' + csv.toFixed(3) + ')';
+    };
+    const step = () => {
+      lastFrame = performance.now();
+      cxv += (txv - cxv) * 0.26;
+      cyv += (tyv - cyv) * 0.26;
+      csv += (1.05 - csv) * 0.26;
+      paint();
+      raf = dragging ? requestAnimationFrame(step) : null;
+    };
+
+    tile.addEventListener('pointerdown', (e) => {
+      if (e.button && e.button !== 0) return;
+      sx = e.clientX; sy = e.clientY; moved = false; dragging = false;
+      tile.classList.remove('snap-back');
+    });
+
+    tile.addEventListener('pointermove', (e) => {
+      if (sx === undefined) return;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      const dist = Math.hypot(dx, dy);
+      if (!moved && dist > 10) moved = true;
+      // Mouse: free drag any direction. Touch: horizontal intent first so
+      // vertical swipes still scroll the page.
+      if (!dragging && dist > DRAG_START && (e.pointerType === 'mouse' || Math.abs(dx) > Math.abs(dy))) {
+        dragging = true;
+        startOffL = tile.offsetLeft; startOffT = tile.offsetTop;
+        lastSwapX = e.clientX; lastSwapY = e.clientY;
+        lastSwapTime = 0; lastPartner = null;
+        txv = tyv = cxv = cyv = 0; csv = 1;
+        lastFrame = performance.now();
+        tile.style.transition = 'none';
+        tile.classList.add('is-dragging');
+        try { tile.setPointerCapture(e.pointerId); } catch (_) {}
+        if (!reduce && !raf) raf = requestAnimationFrame(step);
+      }
+      if (dragging) {
+        e.preventDefault();
+        const shiftX = tile.offsetLeft - startOffL, shiftY = tile.offsetTop - startOffT;
+        txv = dx - shiftX; tyv = dy - shiftY;
+        // paint directly when animation is off or frames are starved
+        if (reduce || performance.now() - lastFrame > 120) { cxv = txv; cyv = tyv; csv = 1.05; paint(); }
+
+        const now = performance.now();
+        if (now - lastSwapTime > SWAP_COOLDOWN_MS &&
+            Math.hypot(e.clientX - lastSwapX, e.clientY - lastSwapY) > SWAP_SPACING) {
+          const stack = document.elementsFromPoint(e.clientX, e.clientY);
+          const under = stack.find((el) => el !== tile && el.classList && el.classList.contains('bento-tile'));
+          const from = tiles.indexOf(tile);
+          const commit = (mutate, partner) => {
+            const oldShiftX = tile.offsetLeft - startOffL, oldShiftY = tile.offsetTop - startOffT;
+            flipReorder(mutate, tile);
+            try { tile.setPointerCapture(e.pointerId); } catch (_) {}
+            lastSwapX = e.clientX; lastSwapY = e.clientY;
+            lastSwapTime = now; lastPartner = partner || null;
+            const dX = (tile.offsetLeft - startOffL) - oldShiftX, dY = (tile.offsetTop - startOffT) - oldShiftY;
+            // shift target and current together so the held photo never jumps
+            txv -= dX; tyv -= dY; cxv -= dX; cyv -= dY;
+            paint();
+          };
+          if (under) {
+            // partner lock: no instant swap-back with the tile we just swapped
+            const relocked = under === lastPartner &&
+              Math.hypot(e.clientX - lastSwapX, e.clientY - lastSwapY) < PARTNER_RELOCK_PX;
+            const to = tiles.indexOf(under);
+            if (!relocked && from !== -1 && to !== -1 && from !== to) {
+              commit(() => { tiles.splice(from, 1); tiles.splice(to, 0, tile); }, under);
+            }
+          } else if (stack.includes(grid)) {
+            const gr = grid.getBoundingClientRect();
+            const lastTile = tiles[tiles.length - 1];
+            if (tile !== lastTile && e.clientY > lastTile.getBoundingClientRect().top + 10) {
+              commit(() => { tiles.splice(from, 1); tiles.push(tile); }, null);
+            } else if (tile !== tiles[0] && e.clientY < gr.top + 10) {
+              commit(() => { tiles.splice(from, 1); tiles.unshift(tile); }, null);
+            }
+          }
+        }
+      }
+    });
+
+    const end = (e) => {
+      if (sx === undefined) return;
+      if (dragging) {
+        dragging = false;
+        if (raf) { cancelAnimationFrame(raf); raf = null; }
+        tile.classList.remove('is-dragging');
+        tile.style.transition = '';
+        paint();
+        if (!reduce) {
+          // settle home with a soft spring (timeout fallback if rAF is throttled)
+          tile.classList.add('snap-back');
+          const clear = () => { tile.style.transform = ''; };
+          requestAnimationFrame(clear);
+          setTimeout(clear, 60);
+          setTimeout(() => tile.classList.remove('snap-back'), 650);
+        } else {
+          tile.style.transform = '';
+        }
+      } else if (!moved) {
+        openModal(tiles.indexOf(tile));
+      }
+      sx = sy = undefined; moved = false;
+    };
+    tile.addEventListener('pointerup', end);
+    tile.addEventListener('pointercancel', end);
+    tile.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(tiles.indexOf(tile)); }
+    });
+  }
+  tiles.forEach(attachTile);
+})();
+</script>
+</body>
+</html>
