@@ -840,6 +840,17 @@ mainNav.querySelectorAll('a').forEach((link) => {
   });
 });
 
+// Clicking the logo scrolls back to the very top (the header is sticky,
+// so a plain #top anchor won't move the page).
+const brandLink = document.querySelector('a.brand');
+if (brandLink) {
+  brandLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+  });
+}
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
