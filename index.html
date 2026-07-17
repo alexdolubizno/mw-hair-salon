@@ -855,6 +855,25 @@ if (brandLink) {
   });
 }
 
+// All other in-page links (About, Services, footer, etc.): scroll to the
+// section but keep the address bar clean - no #hash left in the URL.
+document.querySelectorAll('a[href^="#"]').forEach((a) => {
+  if (a.classList.contains('brand')) return; // handled above
+  a.addEventListener('click', (e) => {
+    const target = document.getElementById(a.getAttribute('href').slice(1));
+    if (!target) return;
+    e.preventDefault();
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+    // Move keyboard focus to the section (keeps it accessible, e.g. the skip link)
+    if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+    target.focus({ preventScroll: true });
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
+  });
+});
+
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (!prefersReducedMotion && 'IntersectionObserver' in window) {
