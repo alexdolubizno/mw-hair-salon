@@ -848,6 +848,10 @@ if (brandLink) {
     e.preventDefault();
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    // Clean any leftover #hash out of the address bar
+    if (window.location.hash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    }
   });
 }
 
