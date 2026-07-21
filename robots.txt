@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mw-hair-salon.com/sitemap.xml
